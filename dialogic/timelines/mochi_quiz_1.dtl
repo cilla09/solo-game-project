@@ -1,0 +1,91 @@
+mochi: Oke, Meowster punya 8 soal buat kamu! Jawab dengan benar ya~
+
+mochi: Soal 1\: Berapa hasil dari 3 + 4?
+- 7
+	mochi: Betul!! Pinter banget~ Miauw!
+	[signal arg="correct"]
+- 6
+	mochi: Hmm, kurang tepat. Jawabannya 7 ya!
+	signal "wrong"
+- 8
+	mochi: Nyaris! Tapi jawabannya 7~
+	signal "wrong"
+
+mochi: Soal 2\: 10 dikurangi 3 hasilnya berapa?
+- 7
+	mochi: Yesss! Kamu memang jagoan~
+	[signal arg="correct"]
+- 6
+	mochi: Eeh, kurang satu lagi! Jawabannya 7.
+	signal "wrong"
+- 8
+	mochi: Kebanyakan satu~ Jawabannya 7!
+	signal "wrong"
+
+mochi: Soal 3\: Berapa 5 kali 2?
+- 10
+	mochi: Meowsome!! Benar sekali~
+	[signal arg="correct"]
+- 8
+	mochi: Bukan~ 5 x 2 = 10 ya!
+	signal "wrong"
+- 12
+	mochi: Hmm, itu 6 x 2. Jawabannya 10!
+	signal "wrong"
+
+mochi: Soal 4\: 15 dibagi 3 sama dengan?
+- 5
+	mochi: Pintar!! Kamu dapet koin lagi~
+	[signal arg="correct"]
+- 4
+	mochi: Hampir! Coba 15 ÷ 3, hasilnya 5.
+	signal "wrong"
+- 6
+	mochi: Bukan~ Jawabannya 5!
+	signal "wrong"
+
+mochi: Soal 5\: Berapa hasil dari 6 + 8?
+- 14
+	mochi: Benar!! Mochi bangga~
+	[signal arg="correct"]
+- 13
+	mochi: Kurang satu lagi! 6 + 8 = 14.
+	signal "wrong"
+- 15
+	mochi: Kebanyakan satu~ Jawabannya 14!
+	signal "wrong"
+
+mochi: Soal 6\: 4 kali 4 hasilnya berapa?
+- 16
+	mochi: Meowsterpiece!! Betul!
+	[signal arg="correct"]
+- 12
+	mochi: Itu 3 x 4~ Jawabannya 16!
+	signal "wrong"
+- 18
+	mochi: Hmm, jawabannya 16 ya!
+	signal "wrong"
+
+mochi: Soal 7\: 20 dikurangi 7 sama dengan?
+- 13
+	mochi: Yes!! Kamu hebat banget~
+	[signal arg="correct"]
+- 12
+	mochi: Kurang satu~ Jawabannya 13!
+	signal "wrong"
+- 14
+	mochi: Kelebihan satu~ Jawabannya 13!
+	signal "wrong"
+
+mochi: Soal 8 (terakhir!)\: Berapa 3 kali 6?
+- 18
+	mochi: SEMPURNA!! Kamu luar biasa~ Mochi senang sekali!
+	[signal arg="correct"]
+- 16
+	mochi: Hampir! 3 x 6 = 18 ya~
+	signal "wrong"
+- 21
+	mochi: Itu 3 x 7~ Jawabannya 18!
+	signal "wrong"
+
+mochi: Sesi belajar selesai! Kamu udah kerja keras hari ini. Sampai ketemu lagi~
