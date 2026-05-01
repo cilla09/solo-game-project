@@ -1,0 +1,157 @@
+koko: Sesi kedua. Aku harap kamu sudah lebih siap.
+
+label q1
+koko: Soal 1\: Samudra terbesar di dunia?
+- Atlantik
+	koko: Atlantik urutan kedua. Jawabannya Pasifik.
+	[signal arg="wrong"]
+- Pasifik
+	koko: Tepat. Samudra Pasifik mencakup hampir setengah permukaan Bumi.
+	[signal arg="correct"]
+- Hindia
+	koko: Hindia urutan ketiga. Jawabannya Pasifik.
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q1
+
+label q2
+koko: Soal 2\: Negara terluas di dunia?
+- Rusia
+	koko: Benar. Rusia hampir dua kali luas Kanada. Fakta yang tidak banyak orang sadari.
+	[signal arg="correct"]
+- Kanada
+	koko: Kanada urutan kedua. Jawabannya Rusia.
+	[signal arg="wrong"]
+- China
+	koko: China jauh lebih kecil. Jawabannya Rusia.
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q2
+
+label q3
+koko: Soal 3\: Gunung tertinggi di dunia?
+- K2
+	koko: K2 tertinggi kedua. Jawabannya Everest.
+	[signal arg="wrong"]
+- Kilimanjaro
+	koko: Kilimanjaro gunung tertinggi di Afrika. Jawabannya Everest.
+	[signal arg="wrong"]
+- Everest
+	koko: Benar. 8.849 meter. Puncak tertinggi di Bumi.
+	[signal arg="correct"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q3
+
+label q4
+koko: Soal 4\: Siapa penemu telepon?
+- Thomas Edison
+	koko: Edison penemu banyak hal, tapi bukan telepon. Jawabannya Alexander Graham Bell.
+	[signal arg="wrong"]
+- Alexander Graham Bell
+	koko: Tepat. Tahun 1876. Koko terkesan kamu tahu ini.
+	[signal arg="correct"]
+- Nikola Tesla
+	koko: Tesla penemu yang luar biasa, tapi telepon bukan karyanya. Jawabannya Bell.
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q4
+
+label q5
+koko: Soal 5\: Berapa jam dalam satu hari?
+- 24
+	koko: Benar. 24 jam, 1440 menit, 86400 detik. Koko suka presisi.
+	[signal arg="correct"]
+- 12
+	koko: 12 jam itu setengah hari. Satu hari penuh 24 jam.
+	[signal arg="wrong"]
+- 48
+	koko: Itu dua hari. Satu hari adalah 24 jam.
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q5
+
+label q6
+koko: Soal 6\: Planet terdekat dengan Matahari?
+- Venus
+	koko: Venus terdekat kedua. Jawabannya Merkurius.
+	[signal arg="wrong"]
+- Mars
+	koko: Mars urutan keempat. Jawabannya Merkurius.
+	[signal arg="wrong"]
+- Merkurius
+	koko: Tepat. Merkurius, meskipun bukan yang terpanas — itu Venus.
+	[signal arg="correct"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q6
+
+label q7
+koko: Soal 7\: Apa ibu kota Jepang?
+- Osaka
+	koko: Osaka kota terbesar kedua. Ibu kotanya Tokyo.
+	[signal arg="wrong"]
+- Tokyo
+	koko: Benar. Tokyo, kota metropolitan terbesar di dunia.
+	[signal arg="correct"]
+- Kyoto
+	koko: Kyoto dulu ibu kota kekaisaran. Sekarang ibu kotanya Tokyo.
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q7
+
+label q8
+koko: Soal 8 (terakhir)\: Berapa sisi pada segitiga?
+- 2
+	koko: Dua sisi tidak bisa membentuk bangun tertutup. Jawabannya 3.
+	[signal arg="wrong"]
+- 4
+	koko: Empat sisi itu persegi. Segitiga punya 3 sisi.
+	[signal arg="wrong"]
+- 3
+	koko: Benar. Tri artinya tiga. Segitiga — tiga sisi. Sederhana.
+	[signal arg="correct"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q8
+
+koko: Sesi kedua selesai. Kamu mulai menunjukkan potensi.
+
+label quit_exit

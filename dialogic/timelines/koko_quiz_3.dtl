@@ -1,0 +1,157 @@
+koko: Sekarang soalnya lebih serius. Fokus.
+
+label q1
+koko: Soal 1\: Gas apa yang paling banyak di atmosfer Bumi?
+- Oksigen
+	koko: Kesalahan umum. Oksigen hanya ~21%. Nitrogen ~78%. Jawabannya nitrogen.
+	[signal arg="wrong"]
+- Nitrogen
+	koko: Tepat. Nitrogen mendominasi atmosfer. Tidak banyak yang tahu ini.
+	[signal arg="correct"]
+- Karbon Dioksida
+	koko: CO2 kurang dari 0.05% atmosfer. Jawabannya nitrogen.
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q1
+
+label q2
+koko: Soal 2\: Siapa yang melukis Mona Lisa?
+- Michelangelo
+	koko: Michelangelo melukis langit-langit Kapel Sistina. Mona Lisa bukan karyanya.
+	[signal arg="wrong"]
+- Raphael
+	koko: Raphael pelukis Renaissance, tapi bukan Mona Lisa. Jawabannya Leonardo da Vinci.
+	[signal arg="wrong"]
+- Leonardo da Vinci
+	koko: Benar. Dilukis sekitar 1503-1519. Karya paling terkenal di dunia.
+	[signal arg="correct"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q2
+
+label q3
+koko: Soal 3\: Berapa jumlah tulang dalam tubuh manusia dewasa?
+- 206
+	koko: Tepat. 206 tulang. Bayi punya lebih banyak — beberapa menyatu saat tumbuh.
+	[signal arg="correct"]
+- 212
+	koko: Terlalu banyak. Jawabannya 206.
+	[signal arg="wrong"]
+- 198
+	koko: Kurang dari seharusnya. Jawabannya 206.
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q3
+
+label q4
+koko: Soal 4\: Apa rumus kimia air?
+- CO2
+	koko: CO2 itu karbon dioksida. Air adalah H2O.
+	[signal arg="wrong"]
+- H2O
+	koko: Benar. Dua atom hidrogen, satu atom oksigen. Koko senang kamu tahu ini.
+	[signal arg="correct"]
+- NaCl
+	koko: NaCl itu garam dapur. Air adalah H2O.
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q4
+
+label q5
+koko: Soal 5\: Siapa yang merumuskan teori relativitas?
+- Newton
+	koko: Newton merumuskan hukum gravitasi dan gerak. Relativitas bukan miliknya.
+	[signal arg="wrong"]
+- Darwin
+	koko: Darwin merumuskan teori evolusi, bukan relativitas.
+	[signal arg="wrong"]
+- Einstein
+	koko: Tepat. Albert Einstein, 1905 dan 1915. Salah satu otak terbesar dalam sejarah.
+	[signal arg="correct"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q5
+
+label q6
+koko: Soal 6\: Organ mana yang memompa darah ke seluruh tubuh?
+- Jantung
+	koko: Benar. Jantung memompa sekitar 100.000 kali per hari. Organ yang luar biasa.
+	[signal arg="correct"]
+- Paru-paru
+	koko: Paru-paru mengolah oksigen. Yang memompa darah adalah jantung.
+	[signal arg="wrong"]
+- Ginjal
+	koko: Ginjal menyaring darah. Yang memompanya adalah jantung.
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q6
+
+label q7
+koko: Soal 7\: Di negara mana Piramida Giza berada?
+- Libya
+	koko: Libya berbatasan dengan Mesir, tapi Piramida Giza ada di Mesir.
+	[signal arg="wrong"]
+- Mesir
+	koko: Tepat. Giza, di tepi barat Sungai Nil. Satu-satunya Keajaiban Dunia Kuno yang masih berdiri.
+	[signal arg="correct"]
+- Sudan
+	koko: Sudan memiliki piramida juga, tapi Piramida Giza ada di Mesir.
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q7
+
+label q8
+koko: Soal 8 (terakhir)\: Negara mana yang memiliki populasi terbanyak saat ini?
+- China
+	koko: China dulu nomor satu, tapi sejak 2023 India melampaui mereka.
+	[signal arg="wrong"]
+- Amerika Serikat
+	koko: Amerika urutan ketiga. Jawabannya India.
+	[signal arg="wrong"]
+- India
+	koko: Benar. India kini negara berpopulasi terbanyak di dunia. Perkembangan yang menarik.
+	[signal arg="correct"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q8
+
+koko: Sesi medium pertama selesai. Kamu tidak mengecewakan.
+
+label quit_exit

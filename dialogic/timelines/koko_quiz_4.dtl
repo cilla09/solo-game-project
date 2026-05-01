@@ -1,0 +1,157 @@
+koko: Medium terakhir sebelum yang paling sulit. Masih sanggup?
+
+label q1
+koko: Soal 1\: Apa nama proses tumbuhan membuat makanan dari sinar matahari?
+- Fotosintesis
+	koko: Tepat. Cahaya + CO2 + air menghasilkan glukosa dan oksigen. Proses yang elegan.
+	[signal arg="correct"]
+- Respirasi
+	koko: Respirasi adalah proses sebaliknya — mengurai glukosa. Jawabannya fotosintesis.
+	[signal arg="wrong"]
+- Fermentasi
+	koko: Fermentasi tidak melibatkan cahaya matahari. Jawabannya fotosintesis.
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q1
+
+label q2
+koko: Soal 2\: Berapa jumlah kontinen di dunia?
+- 5
+	koko: Kurang dua. Jawabannya 7.
+	[signal arg="wrong"]
+- 6
+	koko: Kurang satu. Jawabannya 7 — Asia, Afrika, Amerika Utara, Amerika Selatan, Antartika, Eropa, Australia.
+	[signal arg="wrong"]
+- 7
+	koko: Benar. Tujuh kontinen. Koko tidak perlu menjelaskan lebih lanjut.
+	[signal arg="correct"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q2
+
+label q3
+koko: Soal 3\: Siapa yang menulis "Romeo and Juliet"?
+- Charles Dickens
+	koko: Dickens menulis Oliver Twist dan A Christmas Carol. Bukan Romeo and Juliet.
+	[signal arg="wrong"]
+- Shakespeare
+	koko: Benar. William Shakespeare, sekitar 1594-1596. Karya tragedi paling terkenal.
+	[signal arg="correct"]
+- Jane Austen
+	koko: Jane Austen menulis Pride and Prejudice. Romeo and Juliet karya Shakespeare.
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q3
+
+label q4
+koko: Soal 4\: Apa mata uang Jepang?
+- Yen
+	koko: Tepat. Yen Jepang, salah satu mata uang paling stabil di Asia.
+	[signal arg="correct"]
+- Won
+	koko: Won itu mata uang Korea. Mata uang Jepang adalah Yen.
+	[signal arg="wrong"]
+- Yuan
+	koko: Yuan itu mata uang China. Jawabannya Yen.
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q4
+
+label q5
+koko: Soal 5\: Apa lambang kimia untuk emas?
+- Ag
+	koko: Ag itu perak — dari kata Latin "argentum". Emas adalah Au.
+	[signal arg="wrong"]
+- Fe
+	koko: Fe itu besi — dari "ferrum". Emas adalah Au dari "aurum".
+	[signal arg="wrong"]
+- Au
+	koko: Benar. Au dari bahasa Latin "aurum". Koko suka kamu tahu ini.
+	[signal arg="correct"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q5
+
+label q6
+koko: Soal 6\: Siapa presiden pertama Indonesia?
+- Soeharto
+	koko: Soeharto presiden kedua. Presiden pertama adalah Soekarno.
+	[signal arg="wrong"]
+- Soekarno
+	koko: Tepat. Proklamator sekaligus presiden pertama Republik Indonesia.
+	[signal arg="correct"]
+- Habibie
+	koko: Habibie presiden ketiga. Jawabannya Soekarno.
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q6
+
+label q7
+koko: Soal 7\: Planet terbesar di tata surya?
+- Jupiter
+	koko: Benar. Jupiter begitu besar sehingga semua planet lain bisa masuk ke dalamnya.
+	[signal arg="correct"]
+- Saturnus
+	koko: Saturnus terbesar kedua. Jupiter jauh lebih besar.
+	[signal arg="wrong"]
+- Uranus
+	koko: Uranus terbesar ketiga. Jawabannya Jupiter.
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q7
+
+label q8
+koko: Soal 8 (terakhir)\: Mamalia laut terbesar di dunia?
+- Orca
+	koko: Orca besar, tapi masih jauh di bawah paus biru. Jawabannya paus biru.
+	[signal arg="wrong"]
+- Hiu Paus
+	koko: Hiu paus memang besar, tapi hiu bukan mamalia. Jawabannya paus biru.
+	[signal arg="wrong"]
+- Paus Biru
+	koko: Tepat. Paus biru juga hewan terbesar yang pernah hidup di Bumi — hingga 30 meter.
+	[signal arg="correct"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q8
+
+koko: Dua sesi medium selesai. Bersiaplah untuk yang terakhir.
+
+label quit_exit

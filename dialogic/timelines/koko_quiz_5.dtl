@@ -1,0 +1,158 @@
+koko: Ini sesi terakhir dan tersulitku. Jangan menyesal kalau salah.
+
+label q1
+koko: Soal 1\: Siapa ilmuwan yang menemukan penisilin?
+- Louis Pasteur
+	koko: Pasteur menemukan pasteurisasi dan vaksinasi. Penisilin bukan miliknya.
+	[signal arg="wrong"]
+- Alexander Fleming
+	koko: Tepat. Fleming menemukan penisilin secara tidak sengaja pada 1928. Kecelakaan yang mengubah dunia.
+	[signal arg="correct"]
+- Marie Curie
+	koko: Curie meneliti radioaktivitas. Penisilin ditemukan Fleming.
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q1
+
+label q2
+koko: Soal 2\: Apa ibu kota Australia?
+- Sydney
+	koko: Jawaban paling umum — dan paling salah. Ibu kotanya Canberra, bukan Sydney.
+	[signal arg="wrong"]
+- Melbourne
+	koko: Melbourne pernah menjadi ibu kota sementara. Tapi ibu kota resminya Canberra.
+	[signal arg="wrong"]
+- Canberra
+	koko: Benar. Canberra dibangun khusus sebagai ibu kota karena Sydney dan Melbourne tidak mau mengalah satu sama lain.
+	[signal arg="correct"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q2
+
+label q3
+koko: Soal 3\: Berapa jumlah kromosom pada manusia normal?
+- 46
+	koko: Tepat. 46 kromosom dalam 23 pasang. Termasuk kromosom seks.
+	[signal arg="correct"]
+- 48
+	koko: 48 adalah jumlah kromosom simpanse. Manusia memiliki 46.
+	[signal arg="wrong"]
+- 23
+	koko: 23 itu jumlah pasangannya, bukan totalnya. Total kromosom manusia adalah 46.
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q3
+
+label q4
+koko: Soal 4\: Siapa yang menulis novel "1984"?
+- Aldous Huxley
+	koko: Huxley menulis "Brave New World" — tema serupa, tapi berbeda. Jawabannya George Orwell.
+	[signal arg="wrong"]
+- George Orwell
+	koko: Benar. Diterbitkan 1949, novel ini masih sangat relevan hingga hari ini.
+	[signal arg="correct"]
+- Ray Bradbury
+	koko: Bradbury menulis "Fahrenheit 451". Jawabannya George Orwell.
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q4
+
+label q5
+koko: Soal 5\: Negara mana yang memiliki garis pantai terpanjang di dunia?
+- Rusia
+	koko: Rusia negara terluas, tapi garis pantainya urutan keempat. Jawabannya Kanada.
+	[signal arg="wrong"]
+- Indonesia
+	koko: Indonesia memang kepulauan besar, tapi garis pantai terpanjang tetap milik Kanada.
+	[signal arg="wrong"]
+- Kanada
+	koko: Tepat. Lebih dari 200.000 kilometer. Angka yang luar biasa untuk satu negara.
+	[signal arg="correct"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q5
+
+label q6
+koko: Soal 6\: Apa partikel paling mendasar penyusun proton dan neutron?
+- Quark
+	koko: Benar. Quark — partikel subatomik yang tidak bisa dipecah lebih lanjut. Fisika kuantum yang menarik.
+	[signal arg="correct"]
+- Elektron
+	koko: Elektron tidak menyusun proton atau neutron. Jawabannya quark.
+	[signal arg="wrong"]
+- Proton
+	koko: Proton adalah yang disusun oleh quark, bukan penyusunnya.
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q6
+
+label q7
+koko: Soal 7\: Di tahun berapa Tembok Berlin runtuh?
+- 1987
+	koko: Dua tahun terlalu cepat. Tembok Berlin runtuh pada 1989.
+	[signal arg="wrong"]
+- 1989
+	koko: Tepat. 9 November 1989. Momen bersejarah yang menandai akhir Perang Dingin.
+	[signal arg="correct"]
+- 1991
+	koko: 1991 adalah tahun runtuhnya Uni Soviet. Tembok Berlin runtuh 1989.
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q7
+
+label q8
+koko: Soal 8 (soal terakhirku)\: Apa nama proses pembelahan sel tubuh pada organisme multiseluler?
+- Meiosis
+	koko: Meiosis adalah pembelahan sel untuk reproduksi seksual — menghasilkan gamet. Yang untuk sel tubuh adalah mitosis.
+	[signal arg="wrong"]
+- Osmosis
+	koko: Osmosis adalah perpindahan air melalui membran, bukan pembelahan sel.
+	[signal arg="wrong"]
+- Mitosis
+	koko: Benar. Mitosis menghasilkan dua sel anak identik. Kamu layak mendapat pengakuan Koko.
+	[signal arg="correct"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q8
+
+koko: ...kamu berhasil melewati semua soalku.
+koko: Hmm. Ternyata kamu lebih cerdas dari penampilanmu. Koko mengakui itu.
+
+label quit_exit

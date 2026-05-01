@@ -1,0 +1,157 @@
+koko: Baik. Aku punya 8 soal pengetahuan umum. Jawab dengan jujur.
+
+label q1
+koko: Soal 1\: Apa ibu kota Indonesia?
+- Jakarta
+	koko: Tepat. Tidak perlu diperdebatkan.
+	[signal arg="correct"]
+- Bandung
+	koko: Bandung itu kota, bukan ibu kota. Jawabannya Jakarta.
+	[signal arg="wrong"]
+- Surabaya
+	koko: Surabaya kota terbesar kedua. Ibu kotanya Jakarta.
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q1
+
+label q2
+koko: Soal 2\: Berapa jumlah planet di tata surya kita?
+- 7
+	koko: Kurang satu. Jawabannya 8 sejak Pluto diturunkan statusnya.
+	[signal arg="wrong"]
+- 9
+	koko: Itu hitungan lama. Sejak 2006, jawabannya 8.
+	[signal arg="wrong"]
+- 8
+	koko: Benar. Kamu mengikuti perkembangan astronomi rupanya.
+	[signal arg="correct"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q2
+
+label q3
+koko: Soal 3\: Apa warna bendera Indonesia?
+- Merah dan Biru
+	koko: Itu warna bendera Belanda. Bendera Indonesia merah dan putih.
+	[signal arg="wrong"]
+- Merah dan Putih
+	koko: Betul. Sang Saka Merah Putih. Koko terkesan.
+	[signal arg="correct"]
+- Biru dan Putih
+	koko: Bukan. Merah dan Putih. Hafalkan.
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q3
+
+label q4
+koko: Soal 4\: Hewan darat terbesar di dunia?
+- Gajah
+	koko: Tepat sekali. Gajah Afrika bisa mencapai 6 ton. Mengesankan.
+	[signal arg="correct"]
+- Kuda Nil
+	koko: Kuda nil memang besar, tapi masih di bawah gajah. Jawabannya gajah.
+	[signal arg="wrong"]
+- Badak
+	koko: Badak jauh lebih kecil dari gajah. Jawabannya gajah.
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q4
+
+label q5
+koko: Soal 5\: Pada suhu berapa air membeku?
+- -5°C
+	koko: Terlalu dingin. Air membeku tepat di 0°C pada tekanan normal.
+	[signal arg="wrong"]
+- 10°C
+	koko: Di 10°C air masih cair. Jawabannya 0°C.
+	[signal arg="wrong"]
+- 0°C
+	koko: Benar. Titik beku air. Pengetahuan dasar yang penting.
+	[signal arg="correct"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q5
+
+label q6
+koko: Soal 6\: Benua terbesar di dunia?
+- Afrika
+	koko: Afrika besar, tapi bukan yang terbesar. Jawabannya Asia.
+	[signal arg="wrong"]
+- Asia
+	koko: Tepat. Asia mencakup sekitar 30% permukaan daratan Bumi.
+	[signal arg="correct"]
+- Amerika
+	koko: Amerika dibagi dua benua. Keduanya lebih kecil dari Asia.
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q6
+
+label q7
+koko: Soal 7\: Berapa warna dalam pelangi?
+- 7
+	koko: Benar. Merah, jingga, kuning, hijau, biru, nila, ungu.
+	[signal arg="correct"]
+- 6
+	koko: Kurang satu. Ada 7 warna — kamu melewatkan nila.
+	[signal arg="wrong"]
+- 8
+	koko: Kelebihan satu. Jawabannya 7.
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q7
+
+label q8
+koko: Soal 8 (terakhir)\: Apa bahasa resmi Brazil?
+- Spanyol
+	koko: Kesalahan umum. Brazil dijajah Portugis, bukan Spanyol. Jawabannya Portugis.
+	[signal arg="wrong"]
+- Inggris
+	koko: Tidak. Jawabannya Portugis.
+	[signal arg="wrong"]
+- Portugis
+	koko: Tepat. Brazil adalah negara berbahasa Portugis terbesar di dunia.
+	[signal arg="correct"]
+- Mau keluar dulu...
+	koko: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q8
+
+koko: Hmm. Tidak buruk untuk sesi pertama. Sampai nanti.
+
+label quit_exit
