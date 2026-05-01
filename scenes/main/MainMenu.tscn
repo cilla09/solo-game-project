@@ -1,0 +1,42 @@
+[gd_scene format=3 uid="uid://diuhmjjo4egj8"]
+
+[ext_resource type="Script" uid="uid://e8cij5ejpwjt" path="res://scripts/mainMenu.gd" id="1_qi05h"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qi05h"]
+font_size = 48
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cyo5q"]
+
+[node name="MainMenu" type="Node2D" unique_id=1400086701]
+script = ExtResource("1_qi05h")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1869537614]
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=126693952]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer" unique_id=1031134189]
+layout_mode = 2
+size_flags_horizontal = 6
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=461426102]
+layout_mode = 2
+text = "Kitty Care Academy"
+label_settings = SubResource("LabelSettings_qi05h")
+
+[node name="Button" type="Button" parent="HBoxContainer/VBoxContainer2" unique_id=1542925386]
+layout_mode = 2
+text = "Start Game"
+icon = SubResource("AtlasTexture_cyo5q")
+
+[node name="Button2" type="Button" parent="HBoxContainer/VBoxContainer2" unique_id=2046759252]
+layout_mode = 2
+text = "Load Game"
+icon = SubResource("AtlasTexture_cyo5q")
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/Button" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/Button2" to="." method="_on_load_pressed"]
