@@ -1,0 +1,157 @@
+bao: Oke, mulai dari yang gampang dulu ya! 加油! (jiāyóu — semangat!)
+
+label q1
+bao: Soal 1\: Apa arti "你好" (nǐ hǎo)?
+- Selamat tinggal
+	bao: Bukan~ "Selamat tinggal" itu "再见" (zàijiàn). "你好" artinya halo!
+	[signal arg="wrong"]
+- Halo
+	bao: 正确! Betul! "你好" adalah salam paling dasar dalam Mandarin~
+	[signal arg="correct"]
+- Terima kasih
+	bao: "Terima kasih" itu "谢谢" (xièxiè). "你好" artinya halo!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q1
+
+label q2
+bao: Soal 2\: Bagaimana cara menyebut angka "1" dalam Mandarin?
+- 一 (yī)
+	bao: 对了! Betul! 一 (yī) — nada pertama, datar dan panjang~
+	[signal arg="correct"]
+- 二 (èr)
+	bao: 二 (èr) itu angka 2! Angka 1 adalah 一 (yī)!
+	[signal arg="wrong"]
+- 三 (sān)
+	bao: 三 (sān) itu angka 3! Angka 1 adalah 一 (yī)!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q2
+
+label q3
+bao: Soal 3\: Apa arti "谢谢" (xièxiè)?
+- Halo
+	bao: Halo itu "你好" (nǐ hǎo)~ "谢谢" artinya terima kasih!
+	[signal arg="wrong"]
+- Maaf
+	bao: Maaf itu "对不起" (duìbuqǐ)~ "谢谢" artinya terima kasih!
+	[signal arg="wrong"]
+- Terima kasih
+	bao: 太棒了! Betul sekali! "谢谢" — kata yang sering banget dipakai!
+	[signal arg="correct"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q3
+
+label q4
+bao: Soal 4\: Bagaimana cara menyebut "dua" dalam Mandarin?
+- 一 (yī)
+	bao: 一 (yī) itu angka 1! Angka 2 adalah 二 (èr)!
+	[signal arg="wrong"]
+- 二 (èr)
+	bao: Yesss! 二 (èr) — angka 2! Kamu hebat~
+	[signal arg="correct"]
+- 三 (sān)
+	bao: 三 (sān) itu angka 3! Angka 2 adalah 二 (èr)!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q4
+
+label q5
+bao: Soal 5\: Apa arti "再见" (zàijiàn)?
+- Sampai jumpa
+	bao: 对! Betul! "再见" — kata perpisahan yang paling umum dalam Mandarin~
+	[signal arg="correct"]
+- Selamat pagi
+	bao: Selamat pagi itu "早上好" (zǎoshang hǎo)~ "再见" artinya sampai jumpa!
+	[signal arg="wrong"]
+- Halo
+	bao: Halo itu "你好" (nǐ hǎo)~ "再见" artinya sampai jumpa!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q5
+
+label q6
+bao: Soal 6\: Bagaimana cara bilang "air" dalam Mandarin?
+- 饭 (fàn)
+	bao: 饭 (fàn) artinya nasi! Air dalam Mandarin adalah 水 (shuǐ)~
+	[signal arg="wrong"]
+- 茶 (chá)
+	bao: 茶 (chá) artinya teh! Air dalam Mandarin adalah 水 (shuǐ)~
+	[signal arg="wrong"]
+- 水 (shuǐ)
+	bao: 正确! 水 (shuǐ) — air! Nada ketiga, naik-turun-naik~
+	[signal arg="correct"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q6
+
+label q7
+bao: Soal 7\: Apa arti kata ganti "我" (wǒ)?
+- Kamu
+	bao: "Kamu" itu "你" (nǐ)~ "我" (wǒ) artinya saya atau aku!
+	[signal arg="wrong"]
+- Saya
+	bao: 对了! "我" (wǒ) artinya saya atau aku! Kata yang paling sering aku pakai~
+	[signal arg="correct"]
+- Dia
+	bao: "Dia" itu "他/她" (tā)~ "我" (wǒ) artinya saya!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q7
+
+label q8
+bao: Soal 8 (terakhir!)\: Bagaimana cara bilang "makan" dalam Mandarin?
+- 吃 (chī)
+	bao: 太棒了!! 吃 (chī) — makan! Topik favoritku~ Kerja bagus!
+	[signal arg="correct"]
+- 喝 (hē)
+	bao: 喝 (hē) artinya minum! Makan dalam Mandarin adalah 吃 (chī)~
+	[signal arg="wrong"]
+- 睡 (shuì)
+	bao: 睡 (shuì) artinya tidur! Makan dalam Mandarin adalah 吃 (chī)~
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q8
+
+bao: 很好! Sesi pertama selesai! Kamu hebat banget~ Sampai ketemu lagi!
+
+label quit_exit

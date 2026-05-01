@@ -3686,6 +3686,8 @@ tile_set = SubResource("TileSet_766jq")
 position = Vector2(128, 101)
 script = ExtResource("3_mb1st")
 cat_key = "bao"
+greeting_timeline = "bao_greeting"
+idle_timeline = "bao_idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PartnerCat" unique_id=608006095]
 position = Vector2(48, 35)

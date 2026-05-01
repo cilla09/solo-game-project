@@ -1,0 +1,157 @@
+bao: Sesi medium terakhir sebelum yang paling susah! 继续加油!
+
+label q1
+bao: Soal 1\: Apa arti kata sambung "因为" (yīnwèi)?
+- Karena
+	bao: 对! "因为" artinya karena. Biasanya berpasangan dengan "所以" (suǒyǐ) — jadi~
+	[signal arg="correct"]
+- Tetapi
+	bao: Tetapi itu "但是" (dànshì)~ "因为" artinya karena!
+	[signal arg="wrong"]
+- Kalau
+	bao: Kalau itu "如果" (rúguǒ)~ "因为" artinya karena!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q1
+
+label q2
+bao: Soal 2\: Kata negasi paling umum dalam Mandarin adalah?
+- 没 (méi)
+	bao: 没 (méi) dipakai untuk menegasi 有 (yǒu) atau kejadian lampau~ Negasi paling umum adalah 不 (bù)!
+	[signal arg="wrong"]
+- 别 (bié)
+	bao: 别 (bié) artinya jangan~ Negasi paling umum dan serbaguna adalah 不 (bù)!
+	[signal arg="wrong"]
+- 不 (bù)
+	bao: 正确! 不 (bù) — negasi paling fleksibel. Perhatikan nadanya berubah jadi 2 sebelum nada 4~
+	[signal arg="correct"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q2
+
+label q3
+bao: Soal 3\: Apa arti "以前" (yǐqián)?
+- Nanti
+	bao: Nanti itu "以后" (yǐhòu) atau "待会儿" (dāihuìr)~ "以前" artinya sebelumnya atau dulu!
+	[signal arg="wrong"]
+- Sebelumnya/Dulu
+	bao: 对了! "以前" — sebelumnya, dulu, di masa lalu. Lawannya adalah "以后" (yǐhòu) — nanti~
+	[signal arg="correct"]
+- Sekarang
+	bao: Sekarang itu "现在" (xiànzài)~ "以前" artinya sebelumnya atau dulu!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q3
+
+label q4
+bao: Soal 4\: Karakter "他" (dia laki-laki) dan "她" (dia perempuan) dibaca sama yaitu?
+- Tā
+	bao: 对! Keduanya dibaca "tā" — nada pertama. Bedanya hanya di tulisan!
+	[signal arg="correct"]
+- Wǒ
+	bao: Wǒ itu "我" — saya~ "他" dan "她" keduanya dibaca "tā"!
+	[signal arg="wrong"]
+- Nǐ
+	bao: Nǐ itu "你" — kamu~ "他" dan "她" keduanya dibaca "tā"!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q4
+
+label q5
+bao: Soal 5\: Apa arti "方便" (fāngbiàn)?
+- Sulit
+	bao: Sulit itu "困难" (kùnnán)~ "方便" artinya mudah atau nyaman!
+	[signal arg="wrong"]
+- Mahal
+	bao: Mahal itu "贵" (guì)~ "方便" artinya mudah atau nyaman!
+	[signal arg="wrong"]
+- Mudah/Nyaman
+	bao: 正确! "方便" — mudah, nyaman, praktis! Sering dipakai di kehidupan sehari-hari~
+	[signal arg="correct"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q5
+
+label q6
+bao: Soal 6\: Bagaimana cara bilang "selamat ulang tahun" dalam Mandarin?
+- 新年快乐 (xīnnián kuàilè)
+	bao: 新年快乐 artinya selamat tahun baru~ Ulang tahun adalah 生日快乐 (shēngrì kuàilè)!
+	[signal arg="wrong"]
+- 生日快乐 (shēngrì kuàilè)
+	bao: 对! 生日快乐! "生日" artinya ulang tahun, "快乐" artinya bahagia~ Selamat ulang tahun!
+	[signal arg="correct"]
+- 恭喜发财 (gōngxǐ fācái)
+	bao: 恭喜发财 artinya semoga kaya raya — diucapkan saat Tahun Baru Imlek~ Ulang tahun adalah 生日快乐!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q6
+
+label q7
+bao: Soal 7\: Apa arti pola kalimat "虽然...但是..." (suīrán...dànshì...)?
+- Meskipun...tetapi...
+	bao: 对了! Contohnya\: "虽然很难，但是我会努力" — meskipun sulit, aku akan berusaha!
+	[signal arg="correct"]
+- Karena...jadi...
+	bao: Karena...jadi... itu "因为...所以..." (yīnwèi...suǒyǐ...)~ "虽然...但是..." artinya meskipun...tetapi...
+	[signal arg="wrong"]
+- Kalau...maka...
+	bao: Kalau...maka... itu "如果...就..." (rúguǒ...jiù...)~ "虽然...但是..." artinya meskipun...tetapi...
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q7
+
+label q8
+bao: Soal 8 (terakhir!)\: Radikal 氵(sāndiǎnshuǐ — tiga titik air) biasanya berkaitan dengan?
+- Api
+	bao: Api itu radikalnya 火 (huǒ) atau 灬~ 氵adalah radikal air!
+	[signal arg="wrong"]
+- Tanah
+	bao: Tanah itu radikalnya 土 (tǔ)~ 氵adalah radikal air!
+	[signal arg="wrong"]
+- Air
+	bao: 太棒了!! 氵adalah radikal air! Karakter seperti 河 (sungai), 海 (laut), 泳 (berenang) semuanya ada 氵~
+	[signal arg="correct"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q8
+
+bao: 你做得很好! Tinggal satu sesi lagi — yang paling susah! Siap?
+
+label quit_exit

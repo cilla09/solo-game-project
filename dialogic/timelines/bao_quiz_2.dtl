@@ -1,0 +1,157 @@
+bao: Sesi kedua! Masih gampang kok, 加油~
+
+label q1
+bao: Soal 1\: Apa arti "猫" (māo)?
+- Anjing
+	bao: Anjing itu "狗" (gǒu)~ "猫" (māo) artinya kucing! Seperti aku!
+	[signal arg="wrong"]
+- Burung
+	bao: Burung itu "鸟" (niǎo)~ "猫" (māo) artinya kucing!
+	[signal arg="wrong"]
+- Kucing
+	bao: 对! "猫" (māo) — kucing! Kata favoritku tentu saja~
+	[signal arg="correct"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q1
+
+label q2
+bao: Soal 2\: Bagaimana cara bilang "selamat pagi" dalam Mandarin?
+- 晚安 (wǎn'ān)
+	bao: 晚安 artinya selamat malam! Selamat pagi adalah 早上好 (zǎoshang hǎo)~
+	[signal arg="wrong"]
+- 早上好 (zǎoshang hǎo)
+	bao: 正确! 早上好~ Bao selalu bilang ini setiap pagi!
+	[signal arg="correct"]
+- 再见 (zàijiàn)
+	bao: 再见 artinya sampai jumpa! Selamat pagi adalah 早上好~
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q2
+
+label q3
+bao: Soal 3\: Apa arti karakter "大" (dà)?
+- Besar
+	bao: 太对了! "大" (dà) artinya besar! Gampang diingat karena bentuknya seperti orang merentangkan tangan~
+	[signal arg="correct"]
+- Kecil
+	bao: Kecil itu "小" (xiǎo)~ "大" (dà) artinya besar!
+	[signal arg="wrong"]
+- Tinggi
+	bao: Tinggi itu "高" (gāo)~ "大" (dà) artinya besar!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q3
+
+label q4
+bao: Soal 4\: Bagaimana cara menyebut "tiga" dalam Mandarin?
+- 一 (yī)
+	bao: 一 (yī) itu angka 1~ Angka 3 adalah 三 (sān)!
+	[signal arg="wrong"]
+- 二 (èr)
+	bao: 二 (èr) itu angka 2~ Angka 3 adalah 三 (sān)!
+	[signal arg="wrong"]
+- 三 (sān)
+	bao: 对! 三 (sān) — tiga! Lihat, tiga garis mendatar~
+	[signal arg="correct"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q4
+
+label q5
+bao: Soal 5\: Apa arti "好" (hǎo)?
+- Buruk
+	bao: Buruk itu "坏" (huài)~ "好" (hǎo) artinya baik atau bagus!
+	[signal arg="wrong"]
+- Baik/Bagus
+	bao: 对了! "好" (hǎo) — baik, bagus! Kamu "很好" (hěn hǎo) — sangat bagus!
+	[signal arg="correct"]
+- Besar
+	bao: Besar itu "大" (dà)~ "好" (hǎo) artinya baik atau bagus!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q5
+
+label q6
+bao: Soal 6\: Bagaimana cara bilang "ibu" dalam Mandarin?
+- 妈妈 (māma)
+	bao: 对! 妈妈 (māma) — ibu! Gampang diingat karena bunyinya manja~
+	[signal arg="correct"]
+- 爸爸 (bàba)
+	bao: 爸爸 (bàba) artinya ayah! Ibu adalah 妈妈 (māma)~
+	[signal arg="wrong"]
+- 哥哥 (gēge)
+	bao: 哥哥 (gēge) artinya kakak laki-laki! Ibu adalah 妈妈 (māma)~
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q6
+
+label q7
+bao: Soal 7\: Apa arti "红色" (hóngsè)?
+- Warna biru
+	bao: Biru itu "蓝色" (lánsè)~ "红色" (hóngsè) adalah warna merah!
+	[signal arg="wrong"]
+- Warna hijau
+	bao: Hijau itu "绿色" (lǜsè)~ "红色" (hóngsè) adalah warna merah!
+	[signal arg="wrong"]
+- Warna merah
+	bao: 正确! 红色 (hóngsè) — merah! Warna keberuntungan dalam budaya Tionghoa~
+	[signal arg="correct"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q7
+
+label q8
+bao: Soal 8 (terakhir!)\: Bagaimana cara bilang "buku" dalam Mandarin?
+- 笔 (bǐ)
+	bao: 笔 (bǐ) artinya pena! Buku adalah 书 (shū)~
+	[signal arg="wrong"]
+- 书 (shū)
+	bao: 太好了! 书 (shū) — buku! Bao suka membaca~
+	[signal arg="correct"]
+- 桌子 (zhuōzi)
+	bao: 桌子 (zhuōzi) artinya meja! Buku adalah 书 (shū)~
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q8
+
+bao: 非常好! Dua sesi gampang kelar! Sekarang kita naik level ya~
+
+label quit_exit

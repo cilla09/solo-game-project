@@ -1,0 +1,157 @@
+bao: Naik level nih! Soalnya makin seru, siap?
+
+label q1
+bao: Soal 1\: Kata penggolong (量词) yang tepat untuk "sebuah buku" adalah?
+- 个 (gè)
+	bao: 个 (gè) itu penggolong umum untuk orang atau benda. Untuk buku, pakai 本 (běn)~
+	[signal arg="wrong"]
+- 本 (běn)
+	bao: 对! 一本书 (yī běn shū) — sebuah buku! Kata penggolong itu penting sekali~
+	[signal arg="correct"]
+- 张 (zhāng)
+	bao: 张 (zhāng) untuk benda tipis seperti kertas. Untuk buku, pakai 本 (běn)~
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q1
+
+label q2
+bao: Soal 2\: Apa arti "不客气" (bù kèqi)?
+- Tolong
+	bao: Tolong itu "请" (qǐng)~ "不客气" artinya sama-sama!
+	[signal arg="wrong"]
+- Maaf
+	bao: Maaf itu "对不起" (duìbuqǐ)~ "不客气" artinya sama-sama!
+	[signal arg="wrong"]
+- Sama-sama
+	bao: 正确! "不客气" — sama-sama! Dipakai setelah seseorang mengucapkan 谢谢~
+	[signal arg="correct"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q3
+
+label q3
+bao: Soal 3\: Bahasa Mandarin standar memiliki berapa nada dasar?
+- 4
+	bao: 对了! 4 nada — nada 1 datar, nada 2 naik, nada 3 turun-naik, nada 4 turun. Plus nada netral!
+	[signal arg="correct"]
+- 5
+	bao: Mendekati! Ada nada netral (轻声), tapi nada dasar resmi ada 4~
+	[signal arg="wrong"]
+- 6
+	bao: Terlalu banyak~ Mandarin standar punya 4 nada dasar!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q3
+
+label q4
+bao: Soal 4\: Apa arti "我爱你" (wǒ ài nǐ)?
+- Aku membencimu
+	bao: Aduh, bukan~ Itu "我恨你" (wǒ hèn nǐ)! "我爱你" artinya aku mencintaimu!
+	[signal arg="wrong"]
+- Aku mencintaimu
+	bao: 太浪漫了! Betul! "我爱你" — aku mencintaimu! Kalimat yang indah~
+	[signal arg="correct"]
+- Aku merindukanmu
+	bao: Merindukan itu "我想你" (wǒ xiǎng nǐ)~ "我爱你" artinya aku mencintaimu!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q4
+
+label q5
+bao: Soal 5\: Kata "的" (de) dalam Mandarin berfungsi sebagai?
+- Kata kerja
+	bao: "的" bukan kata kerja~ Fungsinya adalah penanda kepemilikan, seperti kata "punya" atau "-nya"!
+	[signal arg="wrong"]
+- Kata tanya
+	bao: Kata tanya dalam Mandarin itu seperti "吗" (ma) atau "什么" (shénme)~ "的" adalah penanda kepemilikan!
+	[signal arg="wrong"]
+- Penanda kepemilikan
+	bao: 对! Misalnya "我的猫" (wǒ de māo) — kucingku! "的" menghubungkan pemilik dan benda~
+	[signal arg="correct"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q5
+
+label q6
+bao: Soal 6\: Apa arti "请" (qǐng)?
+- Tolong/Silakan
+	bao: 正确! "请" — tolong atau silakan! Kata yang sopan dan sering dipakai~
+	[signal arg="correct"]
+- Terima kasih
+	bao: Terima kasih itu "谢谢" (xièxiè)~ "请" artinya tolong atau silakan!
+	[signal arg="wrong"]
+- Maaf
+	bao: Maaf itu "对不起" (duìbuqǐ)~ "请" artinya tolong atau silakan!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q6
+
+label q7
+bao: Soal 7\: Bagaimana cara bilang "hari ini" dalam Mandarin?
+- 昨天 (zuótiān)
+	bao: 昨天 artinya kemarin~ Hari ini adalah 今天 (jīntiān)!
+	[signal arg="wrong"]
+- 今天 (jīntiān)
+	bao: 对! 今天 (jīntiān) — hari ini! 昨天 kemarin, 今天 hari ini, 明天 besok~
+	[signal arg="correct"]
+- 明天 (míngtiān)
+	bao: 明天 artinya besok~ Hari ini adalah 今天 (jīntiān)!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q7
+
+label q8
+bao: Soal 8 (terakhir!)\: Apa arti "工作" (gōngzuò)?
+- Belajar
+	bao: Belajar itu "学习" (xuéxí)~ "工作" artinya bekerja!
+	[signal arg="wrong"]
+- Bermain
+	bao: Bermain itu "玩" (wán)~ "工作" artinya bekerja!
+	[signal arg="wrong"]
+- Bekerja
+	bao: 太棒了! 工作 (gōngzuò) — bekerja! Semoga nanti kamu 找到好工作 — dapat pekerjaan bagus~
+	[signal arg="correct"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q8
+
+bao: 你学得很好! Kamu belajar dengan sangat baik! Satu lagi sesi medium ya~
+
+label quit_exit

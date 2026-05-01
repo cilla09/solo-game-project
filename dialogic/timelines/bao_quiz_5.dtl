@@ -1,0 +1,158 @@
+bao: Ini soal paling susah dari Bao! Tapi kamu pasti bisa — 加油加油!!
+
+label q1
+bao: Soal 1\: Apa arti chengyu "一石二鸟" (yī shí èr niǎo)?
+- Kerja keras tanpa hasil
+	bao: Bukan~ "一石二鸟" artinya sekali jalan dua tujuan tercapai. Seperti "kill two birds with one stone"!
+	[signal arg="wrong"]
+- Sekali jalan dua tujuan tercapai
+	bao: 正确! "一石二鸟" — satu batu dua burung! Chengyu yang sangat berguna~
+	[signal arg="correct"]
+- Sabar menunggu peluang
+	bao: Sabar menunggu itu lebih ke "守株待兔" (shǒu zhū dài tù)~ "一石二鸟" artinya sekali jalan dua tujuan!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q1
+
+label q2
+bao: Soal 2\: Kalimat "我昨天去学校了" artinya?
+- Saya akan pergi ke sekolah besok
+	bao: "昨天" artinya kemarin, bukan besok! Kalimat itu artinya saya pergi ke sekolah kemarin.
+	[signal arg="wrong"]
+- Saya sedang di sekolah
+	bao: Tidak ada kata keterangan waktu yang tepat untuk "sedang"~ "昨天" artinya kemarin!
+	[signal arg="wrong"]
+- Saya pergi ke sekolah kemarin
+	bao: 对了!! 我 (saya) 昨天 (kemarin) 去 (pergi) 学校 (sekolah) 了 (penanda kejadian). Sempurna~
+	[signal arg="correct"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q2
+
+label q3
+bao: Soal 3\: Apa arti ekspresi "尽管如此" (jǐnguǎn rúcǐ)?
+- Meskipun demikian
+	bao: 太对了! "尽管如此" — meskipun demikian, walaupun begitu. Ekspresi yang sering muncul di teks formal~
+	[signal arg="correct"]
+- Oleh karena itu
+	bao: Oleh karena itu itu "因此" (yīncǐ) atau "所以" (suǒyǐ)~ "尽管如此" artinya meskipun demikian!
+	[signal arg="wrong"]
+- Dengan demikian
+	bao: Dengan demikian juga mirip "因此"~ "尽管如此" lebih tepat diterjemahkan meskipun demikian!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q3
+
+label q4
+bao: Soal 4\: Kata "把" (bǎ) dalam kalimat Mandarin berfungsi untuk?
+- Menunjukkan waktu
+	bao: Waktu ditunjukkan dengan keterangan seperti 昨天, 今天~ "把" berfungsi untuk menekankan objek yang dikenai tindakan!
+	[signal arg="wrong"]
+- Menekankan objek yang dikenai tindakan
+	bao: 正确! Contoh\: "我把书放在桌子上" — aku meletakkan buku di meja. "把" membuat objek lebih menonjol~
+	[signal arg="correct"]
+- Menunjukkan tempat
+	bao: Tempat ditunjukkan dengan kata seperti 在 (zài)~ "把" fungsinya untuk menekankan objek tindakan!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q4
+
+label q5
+bao: Soal 5\: Apa arti chengyu "半途而废" (bàntú ér fèi)?
+- Bekerja keras hingga akhir
+	bao: Itu justru sebaliknya~ "半途而废" artinya menyerah di tengah jalan. Jangan sampai kamu begitu ya!
+	[signal arg="wrong"]
+- Mulai kembali dari awal
+	bao: Bukan~ "半途而废" — setengah jalan lalu ditinggalkan. Menyerah di tengah jalan!
+	[signal arg="wrong"]
+- Menyerah di tengah jalan
+	bao: 对! "半途而废" — jangan jadi seperti ini ya! Terus semangat sampai selesai~
+	[signal arg="correct"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q5
+
+label q6
+bao: Soal 6\: Nada keempat (4th tone) dalam Mandarin ditandai dengan tanda?
+- à (garis menurun)
+	bao: 对了! Nada 4 adalah garis menurun — à. Bunyinya tegas dan turun tajam, seperti sedang memerintah!
+	[signal arg="correct"]
+- á (garis naik)
+	bao: Garis naik itu nada 2 — á! Nada 4 adalah garis menurun — à~
+	[signal arg="wrong"]
+- ǎ (garis naik-turun)
+	bao: Itu nada 3 — ǎ! Nada 4 adalah garis menurun — à~
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q6
+
+label q7
+bao: Soal 7\: Apa arti kalimat "你越学越好" (nǐ yuè xué yuè hǎo)?
+- Kamu belum cukup belajar
+	bao: Bukan~ Pola "越...越..." artinya semakin...semakin... "你越学越好" artinya semakin kamu belajar semakin bagus!
+	[signal arg="wrong"]
+- Semakin kamu belajar semakin bagus
+	bao: 太棒了! Pola 越...越... (yuè...yuè...) sangat berguna! Ini juga pesanku untukmu~
+	[signal arg="correct"]
+- Belajar saja tidak cukup
+	bao: Bukan makna itu~ "越学越好" — semakin belajar semakin bagus! Pakai pola 越...越...
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q7
+
+label q8
+bao: Soal 8 (soal terakhirku!)\: Apa arti chengyu "亡羊补牢" (wáng yáng bǔ láo)?
+- Mencegah sebelum terjadi
+	bao: Itu lebih ke "防患未然" (fáng huàn wèi rán)~ "亡羊补牢" artinya memperbaiki setelah kejadian buruk!
+	[signal arg="wrong"]
+- Pasrah dengan keadaan
+	bao: Bukan~ "亡羊补牢" justru menganjurkan untuk segera memperbaiki, bukan pasrah!
+	[signal arg="wrong"]
+- Memperbaiki setelah kejadian buruk
+	bao: 完全正确!! Domba hilang, baru perbaiki kandang — lebih baik terlambat daripada tidak sama sekali!
+	[signal arg="correct"]
+- Mau keluar dulu...
+	bao: Kamu yakin? Progress kamu akan hilang loh \:(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q8
+
+bao: 你太厉害了!!! Kamu berhasil melewati semua soal Bao!!
+bao: Bao sangat bangga sama kamu~ 继续加油 ya!!
+
+label quit_exit
