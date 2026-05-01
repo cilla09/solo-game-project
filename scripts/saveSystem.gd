@@ -13,7 +13,8 @@ func save_game(slot: int) -> void:
 		"pose_tier": GameState.pose_tier,
 		"discovered_poses": GameState.discovered_poses,
 		"questions_seen": GameState.questions_seen,
-		"streak": GameState.streak
+		"streak": GameState.streak,
+		"intro_played": GameState.intro_played
 	}
 	
 	var path = SAVE_DIR + "save_%d.json" % slot
@@ -48,6 +49,7 @@ func load_game(slot: int) -> bool:
 	GameState.discovered_poses = data.get("discovered_poses", {})
 	GameState.questions_seen   = data.get("questions_seen", {})
 	GameState.streak           = data.get("streak", 0)
+	GameState.intro_played     = data.get("intro_played", true)
 	
 	return true
 
