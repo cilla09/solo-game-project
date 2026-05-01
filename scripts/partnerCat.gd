@@ -15,6 +15,12 @@ var _cat_sprite: AnimatedSprite2D
 var _default_animation: String = ""
 var _pose_timer: Timer
 var _showing_archive_msg: bool = false
+var _quit_mid_quiz: bool = false
+var _redo_mode: bool = false
+var _redo_overlay: CanvasLayer
+var _redo_vbox: VBoxContainer
+
+const PACK_LABELS: Array[String] = ["Easy 1", "Easy 2", "Medium 1", "Medium 2", "Hard"]
 
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
@@ -33,6 +39,8 @@ func _ready() -> void:
 	_pose_timer.timeout.connect(_revert_animation)
 	add_child(_pose_timer)
 
+	_build_redo_overlay()
+
 	# Temukan sprite kucing dan simpan animasi default-nya
 	await get_tree().process_frame
 	for child in get_children():
@@ -40,6 +48,92 @@ func _ready() -> void:
 			_cat_sprite = child
 			_default_animation = child.animation
 			break
+
+func _build_redo_overlay() -> void:
+	_redo_overlay = CanvasLayer.new()
+	_redo_overlay.visible = false
+	add_child(_redo_overlay)
+
+	var bg := ColorRect.new()
+	bg.color = Color(0, 0, 0, 0.6)
+	bg.set_anchors_preset(Control.PRESET_FULL_RECT)
+	_redo_overlay.add_child(bg)
+
+	var center := CenterContainer.new()
+	center.set_anchors_preset(Control.PRESET_FULL_RECT)
+	_redo_overlay.add_child(center)
+
+	var panel := PanelContainer.new()
+	center.add_child(panel)
+
+	var margin := MarginContainer.new()
+	margin.add_theme_constant_override("margin_left", 20)
+	margin.add_theme_constant_override("margin_right", 20)
+	margin.add_theme_constant_override("margin_top", 20)
+	margin.add_theme_constant_override("margin_bottom", 20)
+	panel.add_child(margin)
+
+	_redo_vbox = VBoxContainer.new()
+	_redo_vbox.custom_minimum_size = Vector2(280, 0)
+	_redo_vbox.add_theme_constant_override("separation", 8)
+	margin.add_child(_redo_vbox)
+
+func _show_redo_popup() -> void:
+	for child in _redo_vbox.get_children():
+		child.queue_free()
+
+	var title := Label.new()
+	title.text = "Mau ngapain?"
+	title.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
+	_redo_vbox.add_child(title)
+
+	var current_pack: int = GameState.quiz_pack.get(cat_key, 0)
+	var next_timeline := "%s_quiz_%d" % [cat_key, current_pack + 1]
+
+	if Dialogic.timeline_exists(next_timeline):
+		var btn := Button.new()
+		btn.text = "Lanjut soal baru"
+		btn.pressed.connect(_on_redo_next_pressed)
+		_redo_vbox.add_child(btn)
+
+	var sep := HSeparator.new()
+	_redo_vbox.add_child(sep)
+
+	var lbl := Label.new()
+	lbl.text = "Latihan ulang:"
+	_redo_vbox.add_child(lbl)
+
+	for i in range(current_pack):
+		var pack_lbl: String = PACK_LABELS[i] if i < PACK_LABELS.size() else "Pack %d" % (i + 1)
+		var btn := Button.new()
+		btn.text = pack_lbl
+		btn.pressed.connect(_on_redo_pack_selected.bind(i + 1))
+		_redo_vbox.add_child(btn)
+
+	var cancel_btn := Button.new()
+	cancel_btn.text = "Nanti aja"
+	cancel_btn.pressed.connect(_close_redo_popup)
+	_redo_vbox.add_child(cancel_btn)
+
+	_redo_overlay.visible = true
+
+func _close_redo_popup() -> void:
+	_redo_overlay.visible = false
+	if player_nearby:
+		%PromptLabel.visible = true
+		_update_prompt()
+
+func _on_redo_next_pressed() -> void:
+	_redo_overlay.visible = false
+	_redo_mode = false
+	_phase = _Phase.QUIZ
+	Dialogic.start(_get_quiz_timeline())
+
+func _on_redo_pack_selected(pack_num: int) -> void:
+	_redo_overlay.visible = false
+	_redo_mode = true
+	_phase = _Phase.QUIZ
+	Dialogic.start("%s_quiz_%d" % [cat_key, pack_num])
 
 func _on_body_entered(body: Node) -> void:
 	if body.name == "Player":
@@ -68,7 +162,7 @@ func _has_food_in_inventory() -> bool:
 	return false
 
 func _unhandled_input(event: InputEvent) -> void:
-	if not player_nearby or _phase != _Phase.NONE or _inventory_ui.visible:
+	if not player_nearby or _phase != _Phase.NONE or _inventory_ui.visible or _redo_overlay.visible:
 		return
 	if event.is_action_pressed("ui_accept"):
 		_start_intro()
@@ -132,11 +226,18 @@ func _on_dialog_ended() -> void:
 					%PromptLabel.visible = true
 					_update_prompt()
 			else:
-				_phase = _Phase.QUIZ
-				Dialogic.start(_get_quiz_timeline())
+				var current_pack: int = GameState.quiz_pack.get(cat_key, 0)
+				if current_pack > 0:
+					_phase = _Phase.NONE
+					_show_redo_popup()
+				else:
+					_phase = _Phase.QUIZ
+					Dialogic.start(_get_quiz_timeline())
 		_Phase.QUIZ:
-			if not _on_final_pack:
+			if not _quit_mid_quiz and not _redo_mode and not _on_final_pack:
 				GameState.quiz_pack[cat_key] = GameState.quiz_pack.get(cat_key, 0) + 1
+			_quit_mid_quiz = false
+			_redo_mode = false
 			_phase = _Phase.NONE
 			if player_nearby:
 				%PromptLabel.visible = true
@@ -151,3 +252,5 @@ func _on_dialogic_signal(arg: Variant) -> void:
 			GameState.coins += 10
 		"wrong":
 			pass
+		"quit":
+			_quit_mid_quiz = true
