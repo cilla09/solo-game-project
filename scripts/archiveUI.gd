@@ -188,7 +188,7 @@ func _make_pose_card(pose_data: Dictionary, is_unlocked: bool, frames: SpriteFra
 		preview_center.add_child(svc)
 
 		var sv := SubViewport.new()
-		sv.size = Vector2i(32, 32)
+		sv.size = Vector2i(48, 48)
 		sv.transparent_bg = true
 		sv.disable_3d = true
 		sv.render_target_update_mode = SubViewport.UPDATE_WHEN_VISIBLE
@@ -197,7 +197,8 @@ func _make_pose_card(pose_data: Dictionary, is_unlocked: bool, frames: SpriteFra
 		var sprite := AnimatedSprite2D.new()
 		sprite.sprite_frames = frames
 		sprite.texture_filter = CanvasItem.TEXTURE_FILTER_NEAREST
-		sprite.position = Vector2(16, 16)
+		sprite.position = Vector2(96, 120)
+		sprite.scale = Vector2(5,5)
 		sprite.play(pose_data["name"])
 		sv.add_child(sprite)
 	else:
