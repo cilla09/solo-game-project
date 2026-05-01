@@ -1,0 +1,157 @@
+mochi: Ini dia soal paling susah dari Meowster! 8 soal, siap??
+
+label q1
+mochi: Soal 1\: 23 kali 7 sama dengan?
+- 155
+	mochi: Hmm, kurang~ 23 × 7 = 161 ya!
+	[signal arg="wrong"]
+- 161
+	mochi: Betul!! Pinter banget~ Miauw!
+	[signal arg="correct"]
+- 168
+	mochi: Itu 24 × 7~ Jawabannya 161!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	mochi: Kamu yakin? Progress kamu akan hilang loh :(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q1
+
+label q2
+mochi: Soal 2\: 288 dibagi 16 hasilnya?
+- 14
+	mochi: Bukan~ 288 ÷ 16 = 18 ya!
+	[signal arg="wrong"]
+- 16
+	mochi: Nyaris! Tapi jawabannya 18~
+	[signal arg="wrong"]
+- 18
+	mochi: Yesss! Kamu memang jagoan~
+	[signal arg="correct"]
+- Mau keluar dulu...
+	mochi: Kamu yakin? Progress kamu akan hilang loh :(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q2
+
+label q3
+mochi: Soal 3\: 347 + 185 berapa?
+- 532
+	mochi: Meowsome!! Benar sekali~
+	[signal arg="correct"]
+- 527
+	mochi: Kurang lima~ Jawabannya 532!
+	[signal arg="wrong"]
+- 537
+	mochi: Kebanyakan lima~ Jawabannya 532!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	mochi: Kamu yakin? Progress kamu akan hilang loh :(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q3
+
+label q4
+mochi: Soal 4\: 500 dikurangi 237 sama dengan?
+- 257
+	mochi: Kurang enam~ Jawabannya 263!
+	[signal arg="wrong"]
+- 263
+	mochi: Pintar!! Kamu dapet koin lagi~
+	[signal arg="correct"]
+- 269
+	mochi: Kebanyakan enam~ Jawabannya 263!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	mochi: Kamu yakin? Progress kamu akan hilang loh :(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q4
+
+label q5
+mochi: Soal 5\: 18 kali 15 hasilnya?
+- 255
+	mochi: Hmm, kurang 15~ Jawabannya 270!
+	[signal arg="wrong"]
+- 280
+	mochi: Kebanyakan 10~ Jawabannya 270!
+	[signal arg="wrong"]
+- 270
+	mochi: Benar!! Mochi bangga~
+	[signal arg="correct"]
+- Mau keluar dulu...
+	mochi: Kamu yakin? Progress kamu akan hilang loh :(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q5
+
+label q6
+mochi: Soal 6\: 324 dibagi 18 sama dengan?
+- 18
+	mochi: Meowsterpiece!! Betul!
+	[signal arg="correct"]
+- 15
+	mochi: Kurang tiga~ Jawabannya 18!
+	[signal arg="wrong"]
+- 21
+	mochi: Kebanyakan tiga~ Jawabannya 18!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	mochi: Kamu yakin? Progress kamu akan hilang loh :(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q6
+
+label q7
+mochi: Soal 7\: 456 + 278 berapa?
+- 728
+	mochi: Kurang enam~ Jawabannya 734!
+	[signal arg="wrong"]
+- 734
+	mochi: Yes!! Kamu hebat banget~
+	[signal arg="correct"]
+- 740
+	mochi: Kebanyakan enam~ Jawabannya 734!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	mochi: Kamu yakin? Progress kamu akan hilang loh :(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q7
+
+label q8
+mochi: Soal 8 (terakhir dan tersusah!)\: 17 kali 23 sama dengan?
+- 381
+	mochi: Hmm, kurang~ 17 × 23 = 391 ya!
+	[signal arg="wrong"]
+- 401
+	mochi: Kebanyakan~ Jawabannya 391!
+	[signal arg="wrong"]
+- 391
+	mochi: SEMPURNA!! Kamu benar-benar luar biasa!! Mochi sangat bangga!!
+	[signal arg="correct"]
+- Mau keluar dulu...
+	mochi: Kamu yakin? Progress kamu akan hilang loh :(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q8
+
+mochi: SEMUA SOAL SELESAI!! Kamu udah ngalahin semua soal Meowster! Mochi bangga banget sama kamu~
+
+label quit_exit

@@ -1,0 +1,157 @@
+mochi: Medium challenge ke-2! Mochi percaya kamu bisa~
+
+label q1
+mochi: Soal 1\: 13 kali 5 sama dengan?
+- 65
+	mochi: Betul!! Pinter banget~ Miauw!
+	[signal arg="correct"]
+- 60
+	mochi: Itu 12 × 5~ Jawabannya 65!
+	[signal arg="wrong"]
+- 70
+	mochi: Itu 14 × 5~ Jawabannya 65!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	mochi: Kamu yakin? Progress kamu akan hilang loh :(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q1
+
+label q2
+mochi: Soal 2\: 132 dibagi 12 hasilnya?
+- 9
+	mochi: Bukan~ 132 ÷ 12 = 11 ya!
+	[signal arg="wrong"]
+- 11
+	mochi: Yesss! Kamu memang jagoan~
+	[signal arg="correct"]
+- 13
+	mochi: Kebanyakan dua~ Jawabannya 11!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	mochi: Kamu yakin? Progress kamu akan hilang loh :(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q2
+
+label q3
+mochi: Soal 3\: 74 + 28 berapa?
+- 98
+	mochi: Hmm, kurang empat~ Jawabannya 102!
+	[signal arg="wrong"]
+- 100
+	mochi: Nyaris! Tapi jawabannya 102~
+	[signal arg="wrong"]
+- 102
+	mochi: Meowsome!! Benar sekali~
+	[signal arg="correct"]
+- Mau keluar dulu...
+	mochi: Kamu yakin? Progress kamu akan hilang loh :(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q3
+
+label q4
+mochi: Soal 4\: 150 dikurangi 67 sama dengan?
+- 83
+	mochi: Pintar!! Kamu dapet koin lagi~
+	[signal arg="correct"]
+- 81
+	mochi: Kurang dua~ Jawabannya 83!
+	[signal arg="wrong"]
+- 85
+	mochi: Kebanyakan dua~ Jawabannya 83!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	mochi: Kamu yakin? Progress kamu akan hilang loh :(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q4
+
+label q5
+mochi: Soal 5\: 9 kali 9 hasilnya?
+- 79
+	mochi: Hmm, kurang dua~ Jawabannya 81!
+	[signal arg="wrong"]
+- 83
+	mochi: Kebanyakan dua~ Jawabannya 81!
+	[signal arg="wrong"]
+- 81
+	mochi: Benar!! Mochi bangga~
+	[signal arg="correct"]
+- Mau keluar dulu...
+	mochi: Kamu yakin? Progress kamu akan hilang loh :(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q5
+
+label q6
+mochi: Soal 6\: 72 dibagi 8 sama dengan?
+- 8
+	mochi: Itu 64 ÷ 8~ Jawabannya 9!
+	[signal arg="wrong"]
+- 9
+	mochi: Meowsterpiece!! Betul!
+	[signal arg="correct"]
+- 10
+	mochi: Kebanyakan satu~ Jawabannya 9!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	mochi: Kamu yakin? Progress kamu akan hilang loh :(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q6
+
+label q7
+mochi: Soal 7\: 14 kali 7 hasilnya?
+- 96
+	mochi: Kurang dua~ Jawabannya 98!
+	[signal arg="wrong"]
+- 100
+	mochi: Kebanyakan dua~ Jawabannya 98!
+	[signal arg="wrong"]
+- 98
+	mochi: Yes!! Kamu hebat banget~
+	[signal arg="correct"]
+- Mau keluar dulu...
+	mochi: Kamu yakin? Progress kamu akan hilang loh :(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q7
+
+label q8
+mochi: Soal 8 (terakhir!)\: 125 dibagi 5 sama dengan?
+- 25
+	mochi: SEMPURNA!! Kamu luar biasa~ Mochi senang sekali!
+	[signal arg="correct"]
+- 20
+	mochi: Kurang lima~ Jawabannya 25!
+	[signal arg="wrong"]
+- 30
+	mochi: Kebanyakan lima~ Jawabannya 25!
+	[signal arg="wrong"]
+- Mau keluar dulu...
+	mochi: Kamu yakin? Progress kamu akan hilang loh :(
+	- Iya, berhenti aja
+		[signal arg="quit"]
+		jump quit_exit
+	- Enggak, lanjut!
+		jump q8
+
+mochi: Dua sesi medium selesai! Kamu udah siap buat tantangan terakhir~
+
+label quit_exit

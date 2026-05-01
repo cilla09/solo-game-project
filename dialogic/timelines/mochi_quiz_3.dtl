@@ -1,15 +1,15 @@
-mochi: Oke, Meowster punya 8 soal buat kamu! Jawab dengan benar ya~
+mochi: Nah, sekarang agak tricky nih! Siap naik level?~
 
 label q1
-mochi: Soal 1\: Berapa hasil dari 3 + 4?
-- 7
+mochi: Soal 1\: 12 kali 3 hasilnya?
+- 34
+	mochi: Hmm, bukan~ 12 × 3 = 36 ya!
+	[signal arg="wrong"]
+- 36
 	mochi: Betul!! Pinter banget~ Miauw!
 	[signal arg="correct"]
-- 6
-	mochi: Hmm, kurang tepat. Jawabannya 7 ya!
-	[signal arg="wrong"]
-- 8
-	mochi: Nyaris! Tapi jawabannya 7~
+- 40
+	mochi: Kebanyakan~ Jawabannya 36!
 	[signal arg="wrong"]
 - Mau keluar dulu...
 	mochi: Kamu yakin? Progress kamu akan hilang loh \:(
@@ -20,16 +20,16 @@ mochi: Soal 1\: Berapa hasil dari 3 + 4?
 		jump q1
 
 label q2
-mochi: Soal 2\: 10 dikurangi 3 hasilnya berapa?
+mochi: Soal 2\: 45 dibagi 5 sama dengan?
 - 7
-	mochi: Yesss! Kamu memang jagoan~
-	[signal arg="correct"]
-- 6
-	mochi: Eeh, kurang satu lagi! Jawabannya 7.
+	mochi: Bukan~ 45 ÷ 5 = 9 ya!
 	[signal arg="wrong"]
 - 8
-	mochi: Kebanyakan satu~ Jawabannya 7!
+	mochi: Nyaris! Tapi jawabannya 9~
 	[signal arg="wrong"]
+- 9
+	mochi: Yesss! Kamu memang jagoan~
+	[signal arg="correct"]
 - Mau keluar dulu...
 	mochi: Kamu yakin? Progress kamu akan hilang loh \:(
 	- Iya, berhenti aja
@@ -39,15 +39,15 @@ mochi: Soal 2\: 10 dikurangi 3 hasilnya berapa?
 		jump q2
 
 label q3
-mochi: Soal 3\: Berapa 5 kali 2?
-- 10
+mochi: Soal 3\: 27 + 38 berapa?
+- 65
 	mochi: Meowsome!! Benar sekali~
 	[signal arg="correct"]
-- 8
-	mochi: Bukan~ 5 x 2 = 10 ya!
+- 63
+	mochi: Kurang dua~ Jawabannya 65!
 	[signal arg="wrong"]
-- 12
-	mochi: Hmm, itu 6 x 2. Jawabannya 10!
+- 67
+	mochi: Kebanyakan dua~ Jawabannya 65!
 	[signal arg="wrong"]
 - Mau keluar dulu...
 	mochi: Kamu yakin? Progress kamu akan hilang loh \:(
@@ -58,15 +58,15 @@ mochi: Soal 3\: Berapa 5 kali 2?
 		jump q3
 
 label q4
-mochi: Soal 4\: 15 dibagi 3 sama dengan?
-- 5
+mochi: Soal 4\: 100 dikurangi 43 sama dengan?
+- 54
+	mochi: Kurang tepat nih...
+	[signal arg="wrong"]
+- 57
 	mochi: Pintar!! Kamu dapet koin lagi~
 	[signal arg="correct"]
-- 4
-	mochi: Hampir! Coba 15 ÷ 3, hasilnya 5.
-	[signal arg="wrong"]
-- 6
-	mochi: Bukan~ Jawabannya 5!
+- 60
+	mochi: Kebanyakan tiga~ Jawabannya 57!
 	[signal arg="wrong"]
 - Mau keluar dulu...
 	mochi: Kamu yakin? Progress kamu akan hilang loh \:(
@@ -77,16 +77,16 @@ mochi: Soal 4\: 15 dibagi 3 sama dengan?
 		jump q4
 
 label q5
-mochi: Soal 5\: Berapa hasil dari 6 + 8?
-- 14
+mochi: Soal 5\: 8 kali 7 hasilnya?
+- 48
+	mochi: Itu 8 × 6~ Jawabannya 56!
+	[signal arg="wrong"]
+- 64
+	mochi: Itu 8 × 8~ Jawabannya 56!
+	[signal arg="wrong"]
+- 56
 	mochi: Benar!! Mochi bangga~
 	[signal arg="correct"]
-- 13
-	mochi: Kurang satu lagi! 6 + 8 = 14.
-	[signal arg="wrong"]
-- 15
-	mochi: Kebanyakan satu~ Jawabannya 14!
-	[signal arg="wrong"]
 - Mau keluar dulu...
 	mochi: Kamu yakin? Progress kamu akan hilang loh \:(
 	- Iya, berhenti aja
@@ -96,15 +96,15 @@ mochi: Soal 5\: Berapa hasil dari 6 + 8?
 		jump q5
 
 label q6
-mochi: Soal 6\: 4 kali 4 hasilnya berapa?
-- 16
+mochi: Soal 6\: 63 dibagi 7 sama dengan?
+- 7
+	mochi: Itu 49 ÷ 7~ Jawabannya 9!
+	[signal arg="wrong"]
+- 9
 	mochi: Meowsterpiece!! Betul!
 	[signal arg="correct"]
-- 12
-	mochi: Itu 3 x 4~ Jawabannya 16!
-	[signal arg="wrong"]
-- 18
-	mochi: Hmm, jawabannya 16 ya!
+- 8
+	mochi: Hampir! Tapi jawabannya 9~
 	[signal arg="wrong"]
 - Mau keluar dulu...
 	mochi: Kamu yakin? Progress kamu akan hilang loh \:(
@@ -115,15 +115,15 @@ mochi: Soal 6\: 4 kali 4 hasilnya berapa?
 		jump q6
 
 label q7
-mochi: Soal 7\: 20 dikurangi 7 sama dengan?
-- 13
+mochi: Soal 7\: 15 kali 4 hasilnya?
+- 60
 	mochi: Yes!! Kamu hebat banget~
 	[signal arg="correct"]
-- 12
-	mochi: Kurang satu~ Jawabannya 13!
+- 55
+	mochi: Kurang lima~ Jawabannya 60!
 	[signal arg="wrong"]
-- 14
-	mochi: Kelebihan satu~ Jawabannya 13!
+- 65
+	mochi: Kebanyakan lima~ Jawabannya 60!
 	[signal arg="wrong"]
 - Mau keluar dulu...
 	mochi: Kamu yakin? Progress kamu akan hilang loh \:(
@@ -134,16 +134,16 @@ mochi: Soal 7\: 20 dikurangi 7 sama dengan?
 		jump q7
 
 label q8
-mochi: Soal 8 (terakhir!)\: Berapa 3 kali 6?
-- 18
+mochi: Soal 8 (terakhir!)\: 96 dibagi 8 sama dengan?
+- 10
+	mochi: Hmm, bukan~ 96 ÷ 8 = 12 ya!
+	[signal arg="wrong"]
+- 14
+	mochi: Kebanyakan~ Jawabannya 12!
+	[signal arg="wrong"]
+- 12
 	mochi: SEMPURNA!! Kamu luar biasa~ Mochi senang sekali!
 	[signal arg="correct"]
-- 16
-	mochi: Hampir! 3 x 6 = 18 ya~
-	[signal arg="wrong"]
-- 21
-	mochi: Itu 3 x 7~ Jawabannya 18!
-	[signal arg="wrong"]
 - Mau keluar dulu...
 	mochi: Kamu yakin? Progress kamu akan hilang loh \:(
 	- Iya, berhenti aja
@@ -152,6 +152,6 @@ mochi: Soal 8 (terakhir!)\: Berapa 3 kali 6?
 	- Enggak, lanjut!
 		jump q8
 
-mochi: Sesi belajar selesai! Kamu udah kerja keras hari ini. Sampai ketemu lagi~
+mochi: Wah, kamu berhasil lewatin soal medium! Mochi bangga banget sama kamu~
 
 label quit_exit
