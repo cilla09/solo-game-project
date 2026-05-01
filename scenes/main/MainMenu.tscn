@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://d4jb3dvv811ve" path="res://assets/sprites/Cats/cat 1.png" id="5_yfvkn"]
 [ext_resource type="Texture2D" uid="uid://buoppw3s7fg0u" path="res://assets/sprites/Cats/cat 1.6.png" id="6_cius5"]
 [ext_resource type="Texture2D" uid="uid://d3grvuh6yhxgk" path="res://assets/sprites/Cats/cat 1.9.png" id="7_kg8x7"]
+[ext_resource type="AudioStream" uid="uid://dgw8nny0kkq7a" path="res://assets/audio/blossom.wav" id="8_4gm0a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bkjnr"]
 texture = ExtResource("2_eclvw")
@@ -3067,6 +3068,10 @@ scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_0aa8n")
 animation = &"donut sleep"
 frame_progress = 0.8942865
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1300359248]
+stream = ExtResource("8_4gm0a")
+autoplay = true
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer2/Button" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="HBoxContainer/VBoxContainer2/Button2" to="." method="_on_load_pressed"]

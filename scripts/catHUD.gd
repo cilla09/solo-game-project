@@ -1,3 +1,4 @@
+# catHUD.gd
 extends CanvasLayer
 
 @export var cat_key: String
@@ -17,11 +18,11 @@ func _ready() -> void:
 
 	var name_label := Label.new()
 	name_label.text = cat_key.capitalize()
-	name_label.add_theme_font_size_override("font_size", 18)
+	name_label.add_theme_font_size_override("font_size", 40)
 	vbox.add_child(name_label)
 
 	_mood_label = Label.new()
-	_mood_label.add_theme_font_size_override("font_size", 14)
+	_mood_label.add_theme_font_size_override("font_size", 24)
 	vbox.add_child(_mood_label)
 
 	_refresh_mood()

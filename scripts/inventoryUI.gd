@@ -1,3 +1,4 @@
+# inventoryUI.gd
 extends CanvasLayer
 
 const FOOD_DATA: Dictionary = {
@@ -61,7 +62,7 @@ func _build_ui() -> void:
 
 	_title_label = Label.new()
 	_title_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	_title_label.add_theme_font_size_override("font_size", 16)
+	_title_label.add_theme_font_size_override("font_size", 18)
 	vbox.add_child(_title_label)
 
 	vbox.add_child(HSeparator.new())
@@ -80,7 +81,7 @@ func _build_ui() -> void:
 
 	_feedback_label = Label.new()
 	_feedback_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	_feedback_label.add_theme_font_size_override("font_size", 11)
+	_feedback_label.add_theme_font_size_override("font_size", 18)
 	_feedback_label.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	vbox.add_child(_feedback_label)
 
@@ -125,6 +126,7 @@ func _refresh_list() -> void:
 
 		var name_lbl := Label.new()
 		name_lbl.text = "%s  ×%d" % [data["label"], count]
+		name_lbl.add_theme_font_size_override("font_size", 18)
 		info.add_child(name_lbl)
 
 		var effect_lbl := Label.new()
@@ -136,7 +138,7 @@ func _refresh_list() -> void:
 		else:
 			mood_str = "+%d mood" % data["mood_boost"]
 		effect_lbl.text = mood_str
-		effect_lbl.add_theme_font_size_override("font_size", 11)
+		effect_lbl.add_theme_font_size_override("font_size", 18)
 		info.add_child(effect_lbl)
 
 		var give_btn := Button.new()
@@ -149,7 +151,7 @@ func _refresh_list() -> void:
 		var empty_lbl := Label.new()
 		empty_lbl.text = "Tidak ada item untuk %s." % cat_key.capitalize()
 		empty_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-		empty_lbl.add_theme_font_size_override("font_size", 12)
+		empty_lbl.add_theme_font_size_override("font_size", 18)
 		_items_container.add_child(empty_lbl)
 
 func _on_give_pressed(item_id: String, data: Dictionary) -> void:
@@ -185,6 +187,14 @@ func _on_give_pressed(item_id: String, data: Dictionary) -> void:
 		inv.erase(item_id)
 	GameState.inventory[cat_key] = inv
 
+	if item_id == "mystery_bag":
+		var dp: Array = GameState.discovered_poses.get(cat_key, [])
+		if not "standing" in dp:
+			dp.append("standing")
+			GameState.discovered_poses[cat_key] = dp
+			SFX.play_pose_unlock()
+	if is_new_pose:
+		SFX.play_pose_unlock()
 	emit_signal("item_given", pose, is_new_pose)
 	close()
 

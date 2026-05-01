@@ -154,5 +154,6 @@ koko: Soal 8 (soal terakhirku)\: Apa nama proses pembelahan sel tubuh pada organ
 
 koko: ...kamu berhasil melewati semua soalku.
 koko: Hmm. Ternyata kamu lebih cerdas dari penampilanmu. Koko mengakui itu.
+[signal arg="proud"]
 
 label quit_exit

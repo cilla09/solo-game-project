@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c0iryy5dxnir5" path="res://scenes/elements/player.tscn" id="4_mb1st"]
 [ext_resource type="Script" uid="uid://ba6jvgoi7e8yt" path="res://scripts/changeSceneArea.gd" id="5_46g3t"]
 [ext_resource type="Script" uid="uid://cjeufvlkn1eka" path="res://scripts/catHUD.gd" id="6_46g3t"]
+[ext_resource type="AudioStream" uid="uid://8j535thge3k3" path="res://assets/audio/boss battle.wav" id="8_dxlxh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mmqnr"]
 texture = ExtResource("1_qs73i")
@@ -3697,8 +3698,8 @@ shape = SubResource("CapsuleShape2D_e7sab")
 texture_filter = 1
 position = Vector2(47, 35)
 sprite_frames = SubResource("SpriteFrames_8kuck")
-animation = &"loaf yawn"
-frame_progress = 0.7656419
+animation = &"out sleep"
+autoplay = "out sleep"
 
 [node name="PromptLabel" type="CanvasLayer" parent="." unique_id=775387135]
 
@@ -3736,3 +3737,7 @@ shape = SubResource("RectangleShape2D_5cxhj")
 [node name="CatHUD" type="CanvasLayer" parent="." unique_id=2023932344]
 script = ExtResource("6_46g3t")
 cat_key = "bao"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=280921519]
+stream = ExtResource("8_dxlxh")
+autoplay = true

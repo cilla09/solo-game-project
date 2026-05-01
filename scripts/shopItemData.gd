@@ -1,3 +1,4 @@
+# shopItemData.gd
 class_name ShopItemData
 extends Resource
 

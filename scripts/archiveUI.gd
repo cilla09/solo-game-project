@@ -1,24 +1,22 @@
+# archiveUI.gd
 extends CanvasLayer
 
 const ALL_POSES: Array = [
-	{"name": "donut sleep",  "description": "Curled up tight, fast asleep."},
-	{"name": "loaf lick",    "description": "Grooming in loaf position."},
-	{"name": "loaf yawn",    "description": "A satisfying loaf yawn."},
-	{"name": "loaf yes",     "description": "Happily bobbing with joy!"},
-	{"name": "out sleep",    "description": "Completely knocked out."},
-	{"name": "proud",        "description": "Standing tall and majestic."},
-	{"name": "scared",       "description": "What was THAT?!"},
-	{"name": "sit itch",     "description": "Getting that hard-to-reach spot."},
-	{"name": "sit lick",     "description": "Grooming while seated."},
-	{"name": "sit yawn",     "description": "So sleepy after a long day."},
-	{"name": "standing",     "description": "Alert and on all fours."},
-	{"name": "standup lick", "description": "Standing tall for a good clean."},
+	{"name": "donut sleep",  "description": "Zzzz.. (Warm Milk)"},
+	{"name": "loaf lick",    "description": "Sukak ikaan! (Fancy Fish)"},
+	{"name": "loaf yes",     "description": "Lagi dong, lagii~ (Kibble)"},
+	{"name": "proud",        "description": "Bangga sama kamuu! (Selesai Semua Quiz)"},
+	{"name": "scared",       "description": "HISSSS! (Durian)"},
+	{"name": "sit lick",     "description": "Enak yay :3 (Treat Bag)"},
+	{"name": "sit yawn",     "description": "Cape bangeeut.. (Laser Pointer)"},
+	{"name": "standing",     "description": "Hm."},
+	{"name": "standup lick", "description": "Oh..maa.gaaa... (Catnip)"},
 ]
 
 const CAT_KEYS: Array = ["mochi", "koko", "bao"]
 const CAT_LABELS: Dictionary = {"mochi": "Mochi", "koko": "Koko", "bao": "Bao"}
 
-var _sprite_frames: Dictionary = {}  # cat_key -> SpriteFrames
+var _sprite_frames: Dictionary = {}
 var _current_tab: String = "mochi"
 var _tab_buttons: Dictionary = {}
 var _content_containers: Dictionary = {}
@@ -63,7 +61,7 @@ func _build_ui() -> void:
 	panel.set_anchors_preset(Control.PRESET_CENTER)
 	panel.grow_horizontal = Control.GROW_DIRECTION_BOTH
 	panel.grow_vertical = Control.GROW_DIRECTION_BOTH
-	panel.custom_minimum_size = Vector2(860, 560)
+	panel.custom_minimum_size = Vector2(860, 750)
 	overlay.add_child(panel)
 
 	var margin := MarginContainer.new()
@@ -75,14 +73,13 @@ func _build_ui() -> void:
 	vbox.add_theme_constant_override("separation", 10)
 	margin.add_child(vbox)
 
-	# Title row
 	var title_row := HBoxContainer.new()
 	vbox.add_child(title_row)
 
 	var title := Label.new()
 	title.text = "Pose Archive"
 	title.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-	title.add_theme_font_size_override("font_size", 20)
+	title.add_theme_font_size_override("font_size", 30)
 	title_row.add_child(title)
 
 	var close_btn := Button.new()
@@ -90,7 +87,6 @@ func _build_ui() -> void:
 	close_btn.pressed.connect(close)
 	title_row.add_child(close_btn)
 
-	# Tab row
 	var tab_row := HBoxContainer.new()
 	tab_row.add_theme_constant_override("separation", 6)
 	vbox.add_child(tab_row)
@@ -98,6 +94,7 @@ func _build_ui() -> void:
 	for cat_key in CAT_KEYS:
 		var tab_btn := Button.new()
 		tab_btn.text = CAT_LABELS[cat_key]
+		tab_btn.add_theme_font_size_override("font_size", 24)
 		tab_btn.size_flags_horizontal = Control.SIZE_EXPAND_FILL
 		tab_btn.pressed.connect(_show_tab.bind(cat_key))
 		tab_row.add_child(tab_btn)
@@ -106,7 +103,6 @@ func _build_ui() -> void:
 
 	vbox.add_child(HSeparator.new())
 
-	# Scrollable grid per cat (stacked, only one visible at a time)
 	var scroll := ScrollContainer.new()
 	scroll.size_flags_vertical = Control.SIZE_EXPAND_FILL
 	vbox.add_child(scroll)
@@ -129,7 +125,7 @@ func _build_ui() -> void:
 
 	_stats_label = Label.new()
 	_stats_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-	_stats_label.add_theme_font_size_override("font_size", 11)
+	_stats_label.add_theme_font_size_override("font_size", 24)
 	vbox.add_child(_stats_label)
 
 func _show_tab(cat_key: String) -> void:
@@ -176,7 +172,6 @@ func _make_pose_card(pose_data: Dictionary, is_unlocked: bool, frames: SpriteFra
 	vbox.alignment = BoxContainer.ALIGNMENT_CENTER
 	inner.add_child(vbox)
 
-	# Sprite preview area (centered, fixed height)
 	var preview_center := CenterContainer.new()
 	preview_center.custom_minimum_size = Vector2(180, 180)
 	vbox.add_child(preview_center)
@@ -215,18 +210,16 @@ func _make_pose_card(pose_data: Dictionary, is_unlocked: bool, frames: SpriteFra
 		lock_lbl.vertical_alignment = VERTICAL_ALIGNMENT_CENTER
 		lock_rect.add_child(lock_lbl)
 
-	# Pose name
 	var name_lbl := Label.new()
 	name_lbl.text = pose_data["name"].capitalize() if is_unlocked else "???"
 	name_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	name_lbl.add_theme_font_size_override("font_size", 13)
+	name_lbl.add_theme_font_size_override("font_size", 24)
 	vbox.add_child(name_lbl)
 
-	# Description
 	var desc_lbl := Label.new()
-	desc_lbl.text = pose_data["description"] if is_unlocked else "Not yet discovered."
+	desc_lbl.text = pose_data["description"] if is_unlocked else "Belum diunlock."
 	desc_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_CENTER
-	desc_lbl.add_theme_font_size_override("font_size", 10)
+	desc_lbl.add_theme_font_size_override("font_size", 24)
 	desc_lbl.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	vbox.add_child(desc_lbl)
 

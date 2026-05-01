@@ -1,8 +1,6 @@
+# shop.gd
 extends CanvasLayer
 
-# unlock_at_mood : total mood_accumulated global sebelum item muncul di shop
-# requires       : id toy yang harus dimiliki per kucing (stepping stone)
-# unlocks_food   : food id yang jadi tersedia setelah toy ini dibeli
 const TOYS: Array[Dictionary] = [
 	{
 		"id": "yarn_ball", "label": "Yarn Ball", "price": 10,
@@ -43,8 +41,6 @@ const TOYS: Array[Dictionary] = [
 	},
 ]
 
-# requires_toy: toy yang harus dimiliki kucing agar bisa membeli food ini
-# mood_boost sebagai Array [min, max] = random (mystery bag)
 const FOOD: Array[Dictionary] = [
 	{
 		"id": "kibble", "label": "Kibble", "price": 10,
@@ -169,14 +165,14 @@ func _build_list(items: Array, container: VBoxContainer) -> void:
 
 		var detail_lbl := Label.new()
 		detail_lbl.text = item.get("detail", item.get("flavour", ""))
-		detail_lbl.add_theme_font_size_override("font_size", 11)
+		detail_lbl.add_theme_font_size_override("font_size", 18)
 		info.add_child(detail_lbl)
 
 		var unlock_mood: int = item.get("unlock_at_mood", 0)
 		if not item.get("consumable", false) and unlock_mood > 0:
 			var mood_req_lbl := Label.new()
 			mood_req_lbl.text = "Unlocks at %d total mood" % unlock_mood
-			mood_req_lbl.add_theme_font_size_override("font_size", 10)
+			mood_req_lbl.add_theme_font_size_override("font_size", 16)
 			info.add_child(mood_req_lbl)
 
 		var right_col := VBoxContainer.new()
@@ -190,13 +186,14 @@ func _build_list(items: Array, container: VBoxContainer) -> void:
 
 		var mood_lbl := Label.new()
 		mood_lbl.text = _mood_str(item["mood_boost"])
-		mood_lbl.add_theme_font_size_override("font_size", 11)
+		mood_lbl.add_theme_font_size_override("font_size", 16)
 		mood_lbl.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
 		right_col.add_child(mood_lbl)
 
 		var buy_btn := Button.new()
 		buy_btn.text = "Beli"
 		buy_btn.custom_minimum_size.x = 70
+		buy_btn.add_theme_font_size_override("font_size", 18)
 		buy_btn.pressed.connect(_on_buy_pressed.bind(item, buy_btn))
 		row.add_child(buy_btn)
 
@@ -250,13 +247,20 @@ func _build_cat_popup() -> void:
 	cancel_btn.pressed.connect(_close_cat_popup)
 	vbox.add_child(cancel_btn)
 
+func _on_cat_selected(cat_key: String) -> void:
+	var item := _pending_item
+	_close_cat_popup()
+	_do_purchase(item, cat_key)
+
 func _on_buy_pressed(item: Dictionary, _btn: Button) -> void:
 	if GameState.coins < item["price"]:
+		SFX.play_cancel()
 		_feedback_label.text = "Koin tidak cukup!"
 		return
 
 	if not item.get("consumable", false):
 		if GameState.mood_accumulated < item.get("unlock_at_mood", 0):
+			SFX.play_cancel()
 			_feedback_label.text = "Belum cukup mood total untuk membuka ini! (%d/%d)" % [GameState.mood_accumulated, item["unlock_at_mood"]]
 			return
 		var any_eligible := false
@@ -270,6 +274,7 @@ func _on_buy_pressed(item: Dictionary, _btn: Button) -> void:
 			any_eligible = true
 			break
 		if not any_eligible:
+			SFX.play_cancel()
 			_feedback_label.text = "Semua kucing sudah punya ini."
 			return
 	else:
@@ -282,6 +287,7 @@ func _on_buy_pressed(item: Dictionary, _btn: Button) -> void:
 					any_eligible = true
 					break
 			if not any_eligible:
+				SFX.play_cancel()
 				_feedback_label.text = "Beli mainan yang diperlukan dulu!"
 				return
 
@@ -316,11 +322,6 @@ func _close_cat_popup() -> void:
 		_overlay.visible = false
 	_pending_item = {}
 
-func _on_cat_selected(cat_key: String) -> void:
-	var item := _pending_item
-	_close_cat_popup()
-	_do_purchase(item, cat_key)
-
 func _do_purchase(item: Dictionary, cat_key: String) -> void:
 	if GameState.coins < item["price"]:
 		_feedback_label.text = "Koin tidak cukup!"
@@ -349,6 +350,7 @@ func _do_purchase(item: Dictionary, cat_key: String) -> void:
 		GameState.collectibles[cat_key] = owned
 		_feedback_label.text = "Berhasil membeli %s untuk %s!" % [item["label"], CAT_LABELS[cat_key]]
 
+	SFX.play_confirm()
 	_refresh_coins()
 	_refresh_all_buttons()
 

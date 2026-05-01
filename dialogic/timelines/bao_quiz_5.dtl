@@ -154,5 +154,6 @@ bao: Soal 8 (soal terakhirku!)\: Apa arti chengyu "亡羊补牢" (wáng yáng b�
 
 bao: 你太厉害了!!! Kamu berhasil melewati semua soal Bao!!
 bao: Bao sangat bangga sama kamu~ 继续加油 ya!!
+[signal arg="proud"]
 
 label quit_exit

@@ -1,3 +1,4 @@
+# partnerCat.gd
 extends Area2D
 
 @export var cat_key: String
@@ -254,3 +255,19 @@ func _on_dialogic_signal(arg: Variant) -> void:
 			pass
 		"quit":
 			_quit_mid_quiz = true
+		"proud":
+			if _cat_sprite != null and _cat_sprite.sprite_frames.has_animation("proud"):
+				_pose_timer.stop()
+				_cat_sprite.play("proud")
+				var frame_count: int = _cat_sprite.sprite_frames.get_frame_count("proud")
+				var speed: float = _cat_sprite.sprite_frames.get_animation_speed("proud")
+				_pose_timer.start(clampf((frame_count / speed) * 3.0, 2.0, 6.0))
+			var dp: Array = GameState.discovered_poses.get(cat_key, [])
+			if not "proud" in dp:
+				dp.append("proud")
+				GameState.discovered_poses[cat_key] = dp
+				SFX.play_pose_unlock()
+				_showing_archive_msg = true
+				%PromptLabel.visible = true
+				%PromptLabel.text = "Pose \"Proud\" has been added to the archive!"
+				%PromptLabel.offset_top = -30.0

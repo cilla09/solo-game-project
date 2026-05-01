@@ -21,6 +21,8 @@ GameState="*uid://dqoyi65bylfwp"
 SaveSystem="*uid://d1u6duhexum12"
 Dialogic="*uid://ds2q0uclmolvu"
 CoinsHUD="*res://scripts/coinsHUD.gd"
+Transition="*uid://dl1fhbborld8i"
+SFX="*res://scripts/sfx.gd"
 
 [dialogic]
 
@@ -31,10 +33,30 @@ directories/dch_directory={
 "unit_test_character": "res://Tests/Resources/unit_test_character.dch"
 }
 directories/dtl_directory={
+"bao_greeting": "res://dialogic/timelines/bao_greeting.dtl",
+"bao_idle": "res://dialogic/timelines/bao_idle.dtl",
+"bao_quiz_1": "res://dialogic/timelines/bao_quiz_1.dtl",
+"bao_quiz_2": "res://dialogic/timelines/bao_quiz_2.dtl",
+"bao_quiz_3": "res://dialogic/timelines/bao_quiz_3.dtl",
+"bao_quiz_4": "res://dialogic/timelines/bao_quiz_4.dtl",
+"bao_quiz_5": "res://dialogic/timelines/bao_quiz_5.dtl",
+"bao_quiz_done": "res://dialogic/timelines/bao_quiz_done.dtl",
+"intro": "res://dialogic/timelines/intro.dtl",
+"koko_greeting": "res://dialogic/timelines/koko_greeting.dtl",
+"koko_idle": "res://dialogic/timelines/koko_idle.dtl",
+"koko_quiz_1": "res://dialogic/timelines/koko_quiz_1.dtl",
+"koko_quiz_2": "res://dialogic/timelines/koko_quiz_2.dtl",
+"koko_quiz_3": "res://dialogic/timelines/koko_quiz_3.dtl",
+"koko_quiz_4": "res://dialogic/timelines/koko_quiz_4.dtl",
+"koko_quiz_5": "res://dialogic/timelines/koko_quiz_5.dtl",
+"koko_quiz_done": "res://dialogic/timelines/koko_quiz_done.dtl",
 "mochi_greeting": "res://dialogic/timelines/mochi_greeting.dtl",
 "mochi_idle": "res://dialogic/timelines/mochi_idle.dtl",
 "mochi_quiz_1": "res://dialogic/timelines/mochi_quiz_1.dtl",
 "mochi_quiz_2": "res://dialogic/timelines/mochi_quiz_2.dtl",
+"mochi_quiz_3": "res://dialogic/timelines/mochi_quiz_3.dtl",
+"mochi_quiz_4": "res://dialogic/timelines/mochi_quiz_4.dtl",
+"mochi_quiz_5": "res://dialogic/timelines/mochi_quiz_5.dtl",
 "mochi_quiz_done": "res://dialogic/timelines/mochi_quiz_done.dtl"
 }
 layout/style_directory={
@@ -43,6 +65,7 @@ layout/style_directory={
 }
 layout/style_list=["res://dialogic/styles/mochi.tres"]
 layout/default_style="res://dialogic/styles/mochi.tres"
+variables={}
 
 [display]
 

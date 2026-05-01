@@ -1,3 +1,4 @@
+# changeSceneArea.gd
 extends Area2D
 
 @export var target_scene: String
@@ -10,6 +11,9 @@ var player_inside: bool = false
 func _ready() -> void:
 	body_entered.connect(_on_body_entered)
 	body_exited.connect(_on_body_exited)
+	var indicator := get_node_or_null("ExclaimIndicator")
+	if indicator:
+		indicator.visible = not GameState.visited.get(target_scene, false)
 
 func _on_body_entered(body: Node) -> void:
 	if body.name == "Player":
@@ -24,4 +28,8 @@ func _on_body_exited(body: Node) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if player_inside and event.is_action_pressed("ui_accept"):
-		get_tree().change_scene_to_file("res://scenes/" + target_scene + ".tscn")
+		GameState.visited[target_scene] = true
+		var indicator := get_node_or_null("ExclaimIndicator")
+		if indicator:
+			indicator.visible = false
+		Transition.fade_to_scene("res://scenes/" + target_scene + ".tscn")

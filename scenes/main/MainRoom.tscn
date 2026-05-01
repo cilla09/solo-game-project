@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://cec6cspgays0i" path="res://scenes/elements/shopUI.tscn" id="7_7d3hd"]
 [ext_resource type="Script" uid="uid://dqe78w1pw0n4v" path="res://scripts/archiveZone.gd" id="8_arch"]
 [ext_resource type="PackedScene" path="res://scenes/elements/archiveUI.tscn" id="9_arch"]
+[ext_resource type="AudioStream" uid="uid://db5emdtpgavmb" path="res://assets/audio/regrowth wip.wav" id="11_umodb"]
+[ext_resource type="Script" uid="uid://ik6q5w0a8dl" path="res://scripts/exclaim_indicator.gd" id="12_exclaim"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7d3hd"]
 texture = ExtResource("2_f6rux")
@@ -1738,6 +1740,10 @@ prompt_text = "[Enter] Ketemu Mochi"
 position = Vector2(120, 69)
 shape = SubResource("RectangleShape2D_l3371")
 
+[node name="ExclaimIndicator" type="Node2D" parent="Zones/DoorZone1" unique_id=100000010]
+position = Vector2(120, 52)
+script = ExtResource("12_exclaim")
+
 [node name="DoorZone2" type="Area2D" parent="Zones" unique_id=1416947581]
 script = ExtResource("6_change")
 target_scene = "main/KokoRoom"
@@ -1746,6 +1752,10 @@ prompt_text = "[Enter] Ketemu Koko"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zones/DoorZone2" unique_id=360942465]
 position = Vector2(168, 69)
 shape = SubResource("RectangleShape2D_l3371")
+
+[node name="ExclaimIndicator" type="Node2D" parent="Zones/DoorZone2" unique_id=100000011]
+position = Vector2(168, 52)
+script = ExtResource("12_exclaim")
 
 [node name="DoorZone3" type="Area2D" parent="Zones" unique_id=26268098]
 script = ExtResource("6_change")
@@ -1756,12 +1766,20 @@ prompt_text = "[Enter] Ketemu Bao"
 position = Vector2(216, 69)
 shape = SubResource("RectangleShape2D_l3371")
 
+[node name="ExclaimIndicator" type="Node2D" parent="Zones/DoorZone3" unique_id=100000012]
+position = Vector2(216, 52)
+script = ExtResource("12_exclaim")
+
 [node name="ShopZone" type="Area2D" parent="Zones" unique_id=53750890]
 script = ExtResource("6_wtrxb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Zones/ShopZone" unique_id=435429328]
 position = Vector2(145, 66)
 shape = SubResource("RectangleShape2D_rjvp5")
+
+[node name="ExclaimIndicator" type="Node2D" parent="Zones/ShopZone" unique_id=100000013]
+position = Vector2(145, 50)
+script = ExtResource("12_exclaim")
 
 [node name="ShopUI" parent="Zones/ShopZone" unique_id=1020047732 instance=ExtResource("7_7d3hd")]
 unique_name_in_owner = true
@@ -1774,6 +1792,10 @@ script = ExtResource("8_arch")
 position = Vector2(192, 68)
 shape = SubResource("RectangleShape2D_rjvp5")
 
+[node name="ExclaimIndicator" type="Node2D" parent="Zones/ArchiveZone" unique_id=100000014]
+position = Vector2(192, 52)
+script = ExtResource("12_exclaim")
+
 [node name="ArchiveUI" parent="Zones/ArchiveZone" unique_id=321654987 instance=ExtResource("9_arch")]
 unique_name_in_owner = true
 visible = false
@@ -1784,6 +1806,10 @@ script = ExtResource("5_7d3hd")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SavePoint" unique_id=1363289504]
 position = Vector2(218, 142)
 shape = SubResource("CapsuleShape2D_5nb75")
+
+[node name="ExclaimIndicator" type="Node2D" parent="SavePoint" unique_id=100000015]
+position = Vector2(218, 126)
+script = ExtResource("12_exclaim")
 
 [node name="PromptLabel" type="CanvasLayer" parent="." unique_id=216251421]
 
@@ -1804,3 +1830,7 @@ text = "Save Memory (E)?"
 label_settings = SubResource("LabelSettings_rjvp5")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1909866579]
+stream = ExtResource("11_umodb")
+autoplay = true

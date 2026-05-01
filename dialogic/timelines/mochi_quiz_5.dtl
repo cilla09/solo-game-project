@@ -12,7 +12,7 @@ mochi: Soal 1\: 23 kali 7 sama dengan?
 	mochi: Itu 24 × 7~ Jawabannya 161!
 	[signal arg="wrong"]
 - Mau keluar dulu...
-	mochi: Kamu yakin? Progress kamu akan hilang loh :(
+	mochi: Kamu yakin? Progress kamu akan hilang loh \:(
 	- Iya, berhenti aja
 		[signal arg="quit"]
 		jump quit_exit
@@ -31,7 +31,7 @@ mochi: Soal 2\: 288 dibagi 16 hasilnya?
 	mochi: Yesss! Kamu memang jagoan~
 	[signal arg="correct"]
 - Mau keluar dulu...
-	mochi: Kamu yakin? Progress kamu akan hilang loh :(
+	mochi: Kamu yakin? Progress kamu akan hilang loh \:(
 	- Iya, berhenti aja
 		[signal arg="quit"]
 		jump quit_exit
@@ -50,7 +50,7 @@ mochi: Soal 3\: 347 + 185 berapa?
 	mochi: Kebanyakan lima~ Jawabannya 532!
 	[signal arg="wrong"]
 - Mau keluar dulu...
-	mochi: Kamu yakin? Progress kamu akan hilang loh :(
+	mochi: Kamu yakin? Progress kamu akan hilang loh \:(
 	- Iya, berhenti aja
 		[signal arg="quit"]
 		jump quit_exit
@@ -69,7 +69,7 @@ mochi: Soal 4\: 500 dikurangi 237 sama dengan?
 	mochi: Kebanyakan enam~ Jawabannya 263!
 	[signal arg="wrong"]
 - Mau keluar dulu...
-	mochi: Kamu yakin? Progress kamu akan hilang loh :(
+	mochi: Kamu yakin? Progress kamu akan hilang loh \:(
 	- Iya, berhenti aja
 		[signal arg="quit"]
 		jump quit_exit
@@ -88,7 +88,7 @@ mochi: Soal 5\: 18 kali 15 hasilnya?
 	mochi: Benar!! Mochi bangga~
 	[signal arg="correct"]
 - Mau keluar dulu...
-	mochi: Kamu yakin? Progress kamu akan hilang loh :(
+	mochi: Kamu yakin? Progress kamu akan hilang loh \:(
 	- Iya, berhenti aja
 		[signal arg="quit"]
 		jump quit_exit
@@ -107,7 +107,7 @@ mochi: Soal 6\: 324 dibagi 18 sama dengan?
 	mochi: Kebanyakan tiga~ Jawabannya 18!
 	[signal arg="wrong"]
 - Mau keluar dulu...
-	mochi: Kamu yakin? Progress kamu akan hilang loh :(
+	mochi: Kamu yakin? Progress kamu akan hilang loh \:(
 	- Iya, berhenti aja
 		[signal arg="quit"]
 		jump quit_exit
@@ -126,7 +126,7 @@ mochi: Soal 7\: 456 + 278 berapa?
 	mochi: Kebanyakan enam~ Jawabannya 734!
 	[signal arg="wrong"]
 - Mau keluar dulu...
-	mochi: Kamu yakin? Progress kamu akan hilang loh :(
+	mochi: Kamu yakin? Progress kamu akan hilang loh \:(
 	- Iya, berhenti aja
 		[signal arg="quit"]
 		jump quit_exit
@@ -145,7 +145,7 @@ mochi: Soal 8 (terakhir dan tersusah!)\: 17 kali 23 sama dengan?
 	mochi: SEMPURNA!! Kamu benar-benar luar biasa!! Mochi sangat bangga!!
 	[signal arg="correct"]
 - Mau keluar dulu...
-	mochi: Kamu yakin? Progress kamu akan hilang loh :(
+	mochi: Kamu yakin? Progress kamu akan hilang loh \:(
 	- Iya, berhenti aja
 		[signal arg="quit"]
 		jump quit_exit
@@ -153,5 +153,6 @@ mochi: Soal 8 (terakhir dan tersusah!)\: 17 kali 23 sama dengan?
 		jump q8
 
 mochi: SEMUA SOAL SELESAI!! Kamu udah ngalahin semua soal Meowster! Mochi bangga banget sama kamu~
+[signal arg="proud"]
 
 label quit_exit

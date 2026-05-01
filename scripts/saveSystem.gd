@@ -1,3 +1,4 @@
+# saveSystem.gd
 extends Node
 
 const SAVE_DIR = "user://"
@@ -14,7 +15,8 @@ func save_game(slot: int) -> void:
 		"discovered_poses": GameState.discovered_poses,
 		"questions_seen": GameState.questions_seen,
 		"streak": GameState.streak,
-		"intro_played": GameState.intro_played
+		"intro_played": GameState.intro_played,
+		"visited": GameState.visited
 	}
 	
 	var path = SAVE_DIR + "save_%d.json" % slot
@@ -50,7 +52,8 @@ func load_game(slot: int) -> bool:
 	GameState.questions_seen   = data.get("questions_seen", {})
 	GameState.streak           = data.get("streak", 0)
 	GameState.intro_played     = data.get("intro_played", true)
-	
+	GameState.visited          = data.get("visited", {})
+
 	return true
 
 func save_exists(slot: int) -> bool:

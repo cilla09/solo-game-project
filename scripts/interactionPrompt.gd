@@ -1,3 +1,4 @@
+# interactionPrompt.gd
 extends Area2D
 
 @onready var save_prompt: Label = %PromptLabel

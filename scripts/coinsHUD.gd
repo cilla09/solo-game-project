@@ -1,3 +1,4 @@
+# coinsHUD.gd
 extends CanvasLayer
 
 var _label: Label

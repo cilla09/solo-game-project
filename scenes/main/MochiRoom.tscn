@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://c0iryy5dxnir5" path="res://scenes/elements/player.tscn" id="5_1jo6p"]
 [ext_resource type="Script" uid="uid://ba6jvgoi7e8yt" path="res://scripts/changeSceneArea.gd" id="5_u3ef8"]
 [ext_resource type="Script" uid="uid://cjeufvlkn1eka" path="res://scripts/catHUD.gd" id="6_cathud"]
+[ext_resource type="AudioStream" uid="uid://btx2ini5y01xt" path="res://assets/audio/start.wav" id="8_dcn6m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_u3ef8"]
 texture = ExtResource("1_u3ef8")
@@ -3714,8 +3715,9 @@ idle_timeline = "mochi_idle"
 texture_filter = 1
 position = Vector2(47, 35)
 sprite_frames = SubResource("SpriteFrames_8kuck")
-animation = &"donut sleep"
-frame_progress = 0.87529683
+animation = &"sit itch"
+autoplay = "sit itch"
+frame_progress = 0.22448315
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PartnerCat" unique_id=86440496]
 position = Vector2(46, 35)
@@ -3737,3 +3739,7 @@ shape = SubResource("RectangleShape2D_2rv2q")
 [node name="CatHUD" type="CanvasLayer" parent="." unique_id=100000001]
 script = ExtResource("6_cathud")
 cat_key = "mochi"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1884340088]
+stream = ExtResource("8_dcn6m")
+autoplay = true

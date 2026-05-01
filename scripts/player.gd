@@ -1,6 +1,7 @@
+# player.gd
 extends CharacterBody2D
 
-const SPEED = 200.0
+const SPEED = 150.0
 
 @onready var anim: AnimatedSprite2D = $AnimatedSprite2D
 
