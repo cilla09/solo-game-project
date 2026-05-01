@@ -9,15 +9,15 @@ func _ready() -> void:
 	_label = Label.new()
 	_label.set_anchors_preset(Control.PRESET_TOP_RIGHT)
 	_label.anchor_left = 1.0
-	_label.anchor_right = 1.0
+	_label.anchor_right = 0.9
 	_label.anchor_top = 0.0
 	_label.anchor_bottom = 0.0
-	_label.offset_left = -160.0
+	_label.offset_left = -120.0
 	_label.offset_right = -12.0
 	_label.offset_top = 10.0
 	_label.offset_bottom = 36.0
 	_label.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
-	_label.add_theme_font_size_override("font_size", 16)
+	_label.add_theme_font_size_override("font_size", 48)
 	add_child(_label)
 
 func _process(_delta: float) -> void:
