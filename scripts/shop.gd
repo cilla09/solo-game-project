@@ -15,7 +15,7 @@ const TOYS: Array[Dictionary] = [
 		"id": "mouse_toy", "label": "Mouse Toy", "price": 25,
 		"mood_boost": 15, "unlocks_tier": 0,
 		"unlocks_food": [],
-		"detail": "Stepping stone for Tier 3",
+		"detail": "Bikin Meowsters hepi :D",
 		"unlock_at_mood": 50
 	},
 	{
@@ -30,7 +30,7 @@ const TOYS: Array[Dictionary] = [
 		"id": "cozy_blanket", "label": "Cozy Blanket", "price": 30,
 		"mood_boost": 12, "unlocks_tier": 0,
 		"unlocks_food": [],
-		"detail": "Stepping stone for Tier 4",
+		"detail": "Biar meowsters tidurnya nyaman",
 		"unlock_at_mood": 250
 	},
 	{
