@@ -8,10 +8,10 @@
 [ext_resource type="Script" uid="uid://ba6jvgoi7e8yt" path="res://scripts/changeSceneArea.gd" id="6_change"]
 [ext_resource type="Script" uid="uid://cudeqbnkjbiyp" path="res://scripts/shopZone.gd" id="6_wtrxb"]
 [ext_resource type="PackedScene" uid="uid://cec6cspgays0i" path="res://scenes/elements/shopUI.tscn" id="7_7d3hd"]
-[ext_resource type="Script" path="res://scripts/archiveZone.gd" id="8_arch"]
+[ext_resource type="Script" uid="uid://dqe78w1pw0n4v" path="res://scripts/archiveZone.gd" id="8_arch"]
 [ext_resource type="PackedScene" path="res://scenes/elements/archiveUI.tscn" id="9_arch"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ev1pn"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7d3hd"]
 texture = ExtResource("2_f6rux")
 3:0/0 = 0
 4:0/0 = 0
@@ -265,7 +265,7 @@ texture = ExtResource("2_f6rux")
 
 [sub_resource type="TileSet" id="TileSet_nfseo"]
 physics_layer_0/collision_layer = 1
-sources/3 = SubResource("TileSetAtlasSource_ev1pn")
+sources/3 = SubResource("TileSetAtlasSource_7d3hd")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wft8d"]
 texture = ExtResource("2_f6rux")
