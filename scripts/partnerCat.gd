@@ -1,6 +1,8 @@
 # partnerCat.gd
 extends Area2D
 
+const UIPolish = preload("res://scripts/uiPolish.gd")
+
 @export var cat_key: String
 @export var greeting_timeline: String
 @export var idle_timeline: String
@@ -19,6 +21,7 @@ var _showing_archive_msg: bool = false
 var _quit_mid_quiz: bool = false
 var _redo_mode: bool = false
 var _redo_overlay: CanvasLayer
+var _redo_panel: PanelContainer
 var _redo_vbox: VBoxContainer
 
 const PACK_LABELS: Array[String] = ["Easy 1", "Easy 2", "Medium 1", "Medium 2", "Hard"]
@@ -65,6 +68,7 @@ func _build_redo_overlay() -> void:
 	_redo_overlay.add_child(center)
 
 	var panel := PanelContainer.new()
+	_redo_panel = panel
 	center.add_child(panel)
 
 	var margin := MarginContainer.new()
@@ -116,22 +120,23 @@ func _show_redo_popup() -> void:
 	cancel_btn.pressed.connect(_close_redo_popup)
 	_redo_vbox.add_child(cancel_btn)
 
-	_redo_overlay.visible = true
+	UIPolish.polish_buttons(_redo_vbox)
+	UIPolish.show_layer(_redo_overlay, _redo_panel, true)
 
 func _close_redo_popup() -> void:
-	_redo_overlay.visible = false
+	UIPolish.hide_layer(_redo_overlay, _redo_panel)
 	if player_nearby:
-		%PromptLabel.visible = true
 		_update_prompt()
+		UIPolish.show_control(%PromptLabel, true)
 
 func _on_redo_next_pressed() -> void:
-	_redo_overlay.visible = false
+	UIPolish.hide_layer(_redo_overlay, _redo_panel)
 	_redo_mode = false
 	_phase = _Phase.QUIZ
 	Dialogic.start(_get_quiz_timeline())
 
 func _on_redo_pack_selected(pack_num: int) -> void:
-	_redo_overlay.visible = false
+	UIPolish.hide_layer(_redo_overlay, _redo_panel)
 	_redo_mode = true
 	_phase = _Phase.QUIZ
 	Dialogic.start("%s_quiz_%d" % [cat_key, pack_num])
@@ -139,13 +144,13 @@ func _on_redo_pack_selected(pack_num: int) -> void:
 func _on_body_entered(body: Node) -> void:
 	if body.name == "Player":
 		player_nearby = true
-		%PromptLabel.visible = true
 		_update_prompt()
+		UIPolish.show_control(%PromptLabel, true)
 
 func _on_body_exited(body: Node) -> void:
 	if body.name == "Player":
 		player_nearby = false
-		%PromptLabel.visible = false
+		UIPolish.hide_control(%PromptLabel)
 
 func _update_prompt() -> void:
 	if _has_food_in_inventory():
@@ -170,7 +175,7 @@ func _unhandled_input(event: InputEvent) -> void:
 	elif event is InputEventKey and event.pressed and not event.echo:
 		if event.keycode == KEY_F:
 			_inventory_ui.open()
-			%PromptLabel.visible = false
+			UIPolish.hide_control(%PromptLabel)
 
 func _on_item_given(pose: String, is_new_pose: bool) -> void:
 	if pose != "" and _cat_sprite != null and _cat_sprite.sprite_frames.has_animation(pose):
@@ -183,28 +188,28 @@ func _on_item_given(pose: String, is_new_pose: bool) -> void:
 
 	if is_new_pose:
 		_showing_archive_msg = true
-		%PromptLabel.visible = true
 		%PromptLabel.text = "Pose \"%s\" has been added to the archive!" % pose.capitalize()
 		%PromptLabel.offset_top = -30.0
+		UIPolish.show_control(%PromptLabel, true)
 
 func _on_inventory_closed() -> void:
 	if _showing_archive_msg:
 		return
 	if player_nearby:
-		%PromptLabel.visible = true
 		_update_prompt()
+		UIPolish.show_control(%PromptLabel, true)
 
 func _revert_animation() -> void:
 	if _cat_sprite != null and _default_animation != "":
 		_cat_sprite.play(_default_animation)
 	_showing_archive_msg = false
 	if player_nearby:
-		%PromptLabel.visible = true
 		_update_prompt()
+		UIPolish.show_control(%PromptLabel, true)
 
 func _start_intro() -> void:
 	_phase = _Phase.INTRO
-	%PromptLabel.visible = false
+	UIPolish.hide_control(%PromptLabel)
 	var has_greeted: bool = GameState.greeted.get(cat_key, false)
 	Dialogic.start(greeting_timeline if not has_greeted else idle_timeline)
 
@@ -224,8 +229,8 @@ func _on_dialog_ended() -> void:
 				GameState.greeted[cat_key] = true
 				_phase = _Phase.NONE
 				if player_nearby:
-					%PromptLabel.visible = true
 					_update_prompt()
+					UIPolish.show_control(%PromptLabel, true)
 			else:
 				var current_pack: int = GameState.quiz_pack.get(cat_key, 0)
 				if current_pack > 0:
@@ -241,8 +246,8 @@ func _on_dialog_ended() -> void:
 			_redo_mode = false
 			_phase = _Phase.NONE
 			if player_nearby:
-				%PromptLabel.visible = true
 				_update_prompt()
+				UIPolish.show_control(%PromptLabel, true)
 
 func _on_dialogic_signal(arg: Variant) -> void:
 	var parts := str(arg).split(" ")
@@ -268,6 +273,6 @@ func _on_dialogic_signal(arg: Variant) -> void:
 				GameState.discovered_poses[cat_key] = dp
 				SFX.play_pose_unlock()
 				_showing_archive_msg = true
-				%PromptLabel.visible = true
 				%PromptLabel.text = "Pose \"Proud\" has been added to the archive!"
 				%PromptLabel.offset_top = -30.0
+				UIPolish.show_control(%PromptLabel, true)
