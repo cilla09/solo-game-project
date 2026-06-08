@@ -21,6 +21,8 @@ var _current_tab: String = "mochi"
 var _tab_buttons: Dictionary = {}
 var _content_containers: Dictionary = {}
 var _stats_label: Label
+var _fade_root: ColorRect
+var _fade_id: int = 0
 
 func _ready() -> void:
 	visible = false
@@ -46,12 +48,15 @@ func _load_sprite_frames() -> void:
 func open() -> void:
 	_refresh_all_tabs()
 	visible = true
+	_set_fade_alpha(0.0)
+	_fade_to(1.0, 0.18)
 
 func close() -> void:
-	visible = false
+	_fade_to(0.0, 0.12, true)
 
 func _build_ui() -> void:
 	var overlay := ColorRect.new()
+	_fade_root = overlay
 	overlay.color = Color(0, 0, 0, 0.5)
 	overlay.set_anchors_and_offsets_preset(Control.PRESET_FULL_RECT)
 	overlay.mouse_filter = Control.MOUSE_FILTER_STOP
@@ -228,3 +233,26 @@ func _make_pose_card(pose_data: Dictionary, is_unlocked: bool, frames: SpriteFra
 func _unhandled_input(event: InputEvent) -> void:
 	if visible and event.is_action_pressed("ui_cancel"):
 		close()
+
+func _set_fade_alpha(alpha: float) -> void:
+	if _fade_root != null:
+		_fade_root.modulate.a = alpha
+
+func _fade_to(target_alpha: float, duration: float, hide_after := false) -> void:
+	_fade_id += 1
+	var current_id := _fade_id
+	var start_alpha := _fade_root.modulate.a if _fade_root != null else 1.0
+	var elapsed := 0.0
+
+	while elapsed < duration and current_id == _fade_id:
+		await get_tree().process_frame
+		elapsed += get_process_delta_time()
+		var progress := clampf(elapsed / duration, 0.0, 1.0)
+		_set_fade_alpha(lerpf(start_alpha, target_alpha, progress))
+
+	if current_id != _fade_id:
+		return
+
+	_set_fade_alpha(target_alpha)
+	if hide_after:
+		visible = false

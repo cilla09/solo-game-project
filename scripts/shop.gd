@@ -101,11 +101,14 @@ const CAT_LABELS: Dictionary = {"mochi": "Mochi", "koko": "Koko", "bao": "Bao"}
 @onready var _food_container: VBoxContainer = %FoodContainer
 @onready var _tab_toys: Button              = %TabToys
 @onready var _tab_food: Button              = %TabFood
+@onready var _fade_bg: ColorRect            = $ColorRect
+@onready var _fade_panel: Panel             = $Panel
 
 var _overlay: ColorRect
 var _cat_buttons: Dictionary = {}
 var _pending_item: Dictionary = {}
 var _buy_buttons: Array = []
+var _fade_id: int = 0
 
 func _ready() -> void:
 	visible = false
@@ -118,12 +121,14 @@ func _ready() -> void:
 
 func open() -> void:
 	visible = true
+	_set_fade_alpha(0.0)
 	_refresh_coins()
 	_feedback_label.text = ""
 	_refresh_all_buttons()
+	_fade_to(1.0, 0.18)
 
 func close() -> void:
-	visible = false
+	_fade_to(0.0, 0.12, true)
 	_close_cat_popup()
 
 func _show_tab(tab: String) -> void:
@@ -391,3 +396,26 @@ func _refresh_all_buttons() -> void:
 func _unhandled_input(event: InputEvent) -> void:
 	if visible and event.is_action_pressed("ui_cancel"):
 		close()
+
+func _set_fade_alpha(alpha: float) -> void:
+	_fade_bg.modulate.a = alpha
+	_fade_panel.modulate.a = alpha
+
+func _fade_to(target_alpha: float, duration: float, hide_after := false) -> void:
+	_fade_id += 1
+	var current_id := _fade_id
+	var start_alpha := _fade_panel.modulate.a
+	var elapsed := 0.0
+
+	while elapsed < duration and current_id == _fade_id:
+		await get_tree().process_frame
+		elapsed += get_process_delta_time()
+		var progress := clampf(elapsed / duration, 0.0, 1.0)
+		_set_fade_alpha(lerpf(start_alpha, target_alpha, progress))
+
+	if current_id != _fade_id:
+		return
+
+	_set_fade_alpha(target_alpha)
+	if hide_after:
+		visible = false
