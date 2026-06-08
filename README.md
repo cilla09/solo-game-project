@@ -1,6 +1,6 @@
 # Kitty Care Academy
 
-Game kuis edukasi 2D top-down yang cozy, dibuat dengan Godot 4. Kamu berperan sebagai murid yang mengunjungi asrama berisi kucing-kucing "Meowster" — masing-masing punya mata pelajaran dan kepribadian sendiri. Jawab pertanyaan mereka, kumpulkan koin, dan terus kembali untuk belajar lebih banyak.
+Game kuis edukasi 2D top-down yang cozy, dibuat dengan Godot 4. Kamu berperan sebagai murid yang mengunjungi asrama berisi kucing-kucing yang menjadi Meowster kamu, masing-masing punya mata pelajaran dan kepribadian sendiri. Jawab pertanyaan mereka, kumpulkan koin untuk jajanin mereka, dan terus kembali untuk belajar lebih banyak.
 
 **Engine:** Godot 4.6 · **Platform:** PC (Windows/Mac/Linux) · **Genre:** Edukasi / Kuis
 
@@ -10,22 +10,20 @@ Game kuis edukasi 2D top-down yang cozy, dibuat dengan Godot 4. Kamu berperan se
 
 | Kucing | Mata Pelajaran | Kepribadian |
 |--------|---------------|-------------|
-| **Bao** | Bahasa Mandarin (dasar) | Ceria, semangat |
-| **Koko** | Pengetahuan Umum | Serius, to-the-point |
 | **Mochi** | Matematika | Antusias, menggemaskan |
+| **Koko** | Pengetahuan Umum | Serius, to-the-point |
+| **Bao** | Bahasa Mandarin (dasar) | Ceria, semangat |
 
-Setiap Meowster punya 5 sesi kuis berisi 8 soal. Jawaban benar menghasilkan koin yang bisa dibelanjakan di toko dalam game.
+Setiap Meowster punya 5 sesi kuis berisi 8 soal. Terdapat 3 tingkatan, yaitu: Easy, Medium, Hard. Jawaban benar menghasilkan koin yang bisa dibelanjakan di toko dalam game.
 
 ---
 
 ## Perbedaan dari Konsep Sebelumnya
 
-Konsep awal, *Dev's Mind: Puzzle of Relationships*, adalah psychological puzzle adventure dengan mekanik kompleks — manipulasi waktu via save/load, jalur tak terlihat, meta-puzzle, dan narasi emosional 5 karakter. Scope-nya terlalu besar untuk solo project.
-
-Kitty Care Academy mempertahankan elemen inti yang sama:
+Konsep awal, *Dev's Mind: Puzzle of Relationships*, adalah psychological puzzle adventure dengan mekanik kompleks, manipulasi waktu via save/load, jalur tak terlihat, meta-puzzle, dan narasi emosional 5 karakter. Saya baru menyadari scope-nya terlalu besar untuk solo project setelah UTS :(((. Akhirnya saya modifikasi game saya menjadi Kitty Care Academy yang scopenya lebih sederhana, namun tetap men-deliver core points yang saya inginkan dalam solo project saya, yaitu:
 - **Belajar lewat gameplay** — mekanik puzzle disederhanakan menjadi kuis interaktif
 - **Karakter kucing** — kucing sebagai representasi kepribadian nyata, kini jadi 3 Meowster dengan mata pelajaran dan gaya bicara masing-masing
-- **Narasi ringan** — story panjang distilasi menjadi personality tiap karakter, tetap berasa tanpa terlalu berat
+- **Narasi yang hangat dan menyentuh hati** — story panjang sebelumnya distilasi menjadi personality tiap karakter kucing yang berbeda-beda namun tetap lovable.
 
 ---
 
