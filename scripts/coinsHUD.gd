@@ -10,7 +10,7 @@ func _ready() -> void:
 	_label = Label.new()
 	_label.set_anchors_preset(Control.PRESET_TOP_RIGHT)
 	_label.anchor_left = 1.0
-	_label.anchor_right = 0.9
+	_label.anchor_right = 0.95
 	_label.anchor_top = 0.0
 	_label.anchor_bottom = 0.0
 	_label.offset_left = -120.0
