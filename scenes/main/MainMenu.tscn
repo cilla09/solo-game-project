@@ -1411,6 +1411,8 @@ cache/0/80/0/scale = 1.0
 font = SubResource("FontFile_440sr")
 font_size = 80
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_menu_button"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_cyo5q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0pnya"]
@@ -3036,13 +3038,25 @@ label_settings = SubResource("LabelSettings_qi05h")
 
 [node name="Button" type="Button" parent="HBoxContainer/VBoxContainer2" unique_id=1542925386]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxEmpty_menu_button")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_menu_button")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_menu_button")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_menu_button")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_menu_button")
 text = "Start Game"
 icon = SubResource("AtlasTexture_cyo5q")
 
 [node name="Button2" type="Button" parent="HBoxContainer/VBoxContainer2" unique_id=2046759252]
 layout_mode = 2
-theme_override_font_sizes/font_size = 24
+theme_override_constants/outline_size = 16
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxEmpty_menu_button")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_menu_button")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_menu_button")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_menu_button")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_menu_button")
 text = "Load Game"
 icon = SubResource("AtlasTexture_cyo5q")
 
