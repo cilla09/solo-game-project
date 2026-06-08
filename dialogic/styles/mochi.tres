@@ -12,39 +12,46 @@
 [ext_resource type="PackedScene" uid="uid://lx24i8fl6uo" path="res://addons/dialogic/Modules/DefaultLayoutParts/Layer_History/history_layer.tscn" id="10_q2ye4"]
 [ext_resource type="Script" uid="uid://dv08k6ljua6fm" path="res://addons/dialogic/Resources/dialogic_style.gd" id="11_seblv"]
 
-[sub_resource type="Resource" id="Resource_v72oc"]
+[sub_resource type="Resource" id="Resource_33qf7"]
 script = ExtResource("2_qas0r")
 scene = ExtResource("1_33qf7")
 
-[sub_resource type="Resource" id="Resource_ny7qx"]
+[sub_resource type="Resource" id="Resource_qas0r"]
 script = ExtResource("2_qas0r")
 scene = ExtResource("3_0oy00")
 
-[sub_resource type="Resource" id="Resource_5gva7"]
+[sub_resource type="Resource" id="Resource_0oy00"]
 script = ExtResource("2_qas0r")
 scene = ExtResource("4_y1u3v")
 
-[sub_resource type="Resource" id="Resource_agyna"]
+[sub_resource type="Resource" id="Resource_y1u3v"]
 script = ExtResource("2_qas0r")
 scene = ExtResource("5_5jl4y")
 
-[sub_resource type="Resource" id="Resource_08jc5"]
+[sub_resource type="Resource" id="Resource_5jl4y"]
 script = ExtResource("2_qas0r")
 scene = ExtResource("6_bwto2")
+overrides = {
+"box_color_custom": "Color(1, 0.9472656, 0.9472656, 1)",
+"box_color_use_global": "false",
+"box_panel": "\"res://dialogic/styles/koko_panel.tres\"",
+"text_custom_color": "Color(0.013671875, 0.00061416626, 0.00061416626, 1)",
+"text_use_global_color": "false"
+}
 
-[sub_resource type="Resource" id="Resource_frrma"]
+[sub_resource type="Resource" id="Resource_bwto2"]
 script = ExtResource("2_qas0r")
 scene = ExtResource("7_wirt7")
 
-[sub_resource type="Resource" id="Resource_e3a28"]
+[sub_resource type="Resource" id="Resource_wirt7"]
 script = ExtResource("2_qas0r")
 scene = ExtResource("8_jdyhk")
 
-[sub_resource type="Resource" id="Resource_dx7mi"]
+[sub_resource type="Resource" id="Resource_jdyhk"]
 script = ExtResource("2_qas0r")
 scene = ExtResource("9_2qtjg")
 
-[sub_resource type="Resource" id="Resource_ep78m"]
+[sub_resource type="Resource" id="Resource_2qtjg"]
 script = ExtResource("2_qas0r")
 scene = ExtResource("10_q2ye4")
 
@@ -53,14 +60,14 @@ script = ExtResource("11_seblv")
 name = "mochi"
 layer_list = Array[String](["10", "11", "12", "13", "14", "15", "16", "17"])
 layer_info = {
-"": SubResource("Resource_v72oc"),
-"10": SubResource("Resource_ny7qx"),
-"11": SubResource("Resource_5gva7"),
-"12": SubResource("Resource_agyna"),
-"13": SubResource("Resource_08jc5"),
-"14": SubResource("Resource_frrma"),
-"15": SubResource("Resource_e3a28"),
-"16": SubResource("Resource_dx7mi"),
-"17": SubResource("Resource_ep78m")
+"": SubResource("Resource_33qf7"),
+"10": SubResource("Resource_qas0r"),
+"11": SubResource("Resource_0oy00"),
+"12": SubResource("Resource_y1u3v"),
+"13": SubResource("Resource_5jl4y"),
+"14": SubResource("Resource_bwto2"),
+"15": SubResource("Resource_wirt7"),
+"16": SubResource("Resource_jdyhk"),
+"17": SubResource("Resource_2qtjg")
 }
 metadata/_latest_layer = "13"
