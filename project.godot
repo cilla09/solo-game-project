@@ -72,11 +72,18 @@ variables={}
 window/size/viewport_width=1600
 window/size/viewport_height=900
 window/stretch/mode="canvas_items"
-window/stretch/scale_mode="integer"
 
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+
+[filesystem]
+
+import/blender/enabled=false
+
+[gui]
+
+theme/custom_font="uid://dkrex5t25p5j0"
 
 [input]
 
@@ -97,3 +104,4 @@ dialogic_default_action={
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+textures/vram_compression/import_etc2_astc=true
