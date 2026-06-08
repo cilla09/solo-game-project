@@ -7,6 +7,7 @@ func save_game(slot: int) -> void:
 	var data = {
 		"coins": GameState.coins,
 		"mood": GameState.mood,
+		"mood_accumulated": GameState.mood_accumulated,
 		"greeted": GameState.greeted,
 		"quiz_pack": GameState.quiz_pack,
 		"collectibles": GameState.collectibles,
@@ -43,6 +44,7 @@ func load_game(slot: int) -> bool:
 	
 	GameState.coins            = data.get("coins", 0)
 	GameState.mood             = data.get("mood", {})
+	GameState.mood_accumulated = data.get("mood_accumulated", 0)
 	GameState.greeted          = data.get("greeted", {})
 	GameState.quiz_pack        = data.get("quiz_pack", {})
 	GameState.collectibles     = data.get("collectibles", {})
