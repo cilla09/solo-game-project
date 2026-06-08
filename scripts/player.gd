@@ -8,6 +8,12 @@ const SPEED = 150.0
 var last_walk_anim: String = "walk-down"
 
 func _physics_process(_delta: float) -> void:
+	if Dialogic.current_timeline != null:
+		velocity = Vector2.ZERO
+		_play_idle()
+		move_and_slide()
+		return
+
 	var direction := Vector2.ZERO
 	direction.x = Input.get_axis("ui_left", "ui_right")
 	direction.y = Input.get_axis("ui_up", "ui_down")
