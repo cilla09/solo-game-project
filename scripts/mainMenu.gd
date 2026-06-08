@@ -1,6 +1,11 @@
 # mainMenu.gd
 extends Node2D
 
+const UIPolish = preload("res://scripts/uiPolish.gd")
+
+func _ready() -> void:
+	UIPolish.polish_buttons(self)
+
 func _on_start_pressed() -> void:
 	Transition.fade_to_scene("res://scenes/main/MainRoom.tscn")
 
