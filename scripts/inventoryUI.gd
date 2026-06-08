@@ -1,6 +1,8 @@
 # inventoryUI.gd
 extends CanvasLayer
 
+const UIPolish = preload("res://scripts/uiPolish.gd")
+
 const FOOD_DATA: Dictionary = {
 	"kibble":        {"label": "Kibble",        "mood_boost": 8,   "pose_triggered": "loaf yes",    "requires_toy": ""},
 	"fancy_fish":    {"label": "Fancy Fish",     "mood_boost": 15,  "pose_triggered": "loaf lick",   "requires_toy": "yarn_ball"},
@@ -15,6 +17,7 @@ const FOOD_DATA: Dictionary = {
 var cat_key: String = ""
 
 var _overlay: ColorRect
+var _panel: PanelContainer
 var _items_container: VBoxContainer
 var _feedback_label: Label
 var _title_label: Label
@@ -31,10 +34,10 @@ func setup(key: String) -> void:
 
 func open() -> void:
 	_refresh_list()
-	visible = true
+	UIPolish.show_layer(self, _panel, true)
 
 func close() -> void:
-	visible = false
+	UIPolish.hide_layer(self, _panel)
 	emit_signal("closed")
 
 func _build_ui() -> void:
@@ -45,6 +48,7 @@ func _build_ui() -> void:
 	add_child(_overlay)
 
 	var panel := PanelContainer.new()
+	_panel = panel
 	panel.set_anchors_preset(Control.PRESET_CENTER)
 	panel.grow_horizontal = Control.GROW_DIRECTION_BOTH
 	panel.grow_vertical = Control.GROW_DIRECTION_BOTH
@@ -89,6 +93,7 @@ func _build_ui() -> void:
 	close_btn.text = "Tutup"
 	close_btn.pressed.connect(close)
 	vbox.add_child(close_btn)
+	UIPolish.polish_buttons(self)
 
 func _refresh_list() -> void:
 	_title_label.text = "Inventory — %s" % cat_key.capitalize()
@@ -146,6 +151,7 @@ func _refresh_list() -> void:
 		give_btn.custom_minimum_size.x = 70
 		give_btn.pressed.connect(_on_give_pressed.bind(item_id, data))
 		row.add_child(give_btn)
+		UIPolish.polish_button(give_btn)
 
 	if not has_items:
 		var empty_lbl := Label.new()
