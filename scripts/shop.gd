@@ -96,6 +96,7 @@ const CAT_KEYS: Array = ["mochi", "koko", "bao"]
 const CAT_LABELS: Dictionary = {"mochi": "Mochi", "koko": "Koko", "bao": "Bao"}
 
 @onready var _coins_label: Label            = %CoinsLabel
+@onready var _total_mood_label: Label       = %TotalMoodLabel
 @onready var _feedback_label: Label         = %FeedbackLabel
 @onready var _toys_container: VBoxContainer = %ToysContainer
 @onready var _food_container: VBoxContainer = %FoodContainer
@@ -122,7 +123,7 @@ func _ready() -> void:
 func open() -> void:
 	visible = true
 	_set_fade_alpha(0.0)
-	_refresh_coins()
+	_refresh_stats()
 	_feedback_label.text = ""
 	_refresh_all_buttons()
 	_fade_to(1.0, 0.18)
@@ -356,11 +357,12 @@ func _do_purchase(item: Dictionary, cat_key: String) -> void:
 		_feedback_label.text = "Berhasil membeli %s untuk %s!" % [item["label"], CAT_LABELS[cat_key]]
 
 	SFX.play_confirm()
-	_refresh_coins()
+	_refresh_stats()
 	_refresh_all_buttons()
 
-func _refresh_coins() -> void:
+func _refresh_stats() -> void:
 	_coins_label.text = "Coins: %d" % GameState.coins
+	_total_mood_label.text = "Total Mood: %d" % GameState.mood_accumulated
 
 func _refresh_all_buttons() -> void:
 	for entry in _buy_buttons:

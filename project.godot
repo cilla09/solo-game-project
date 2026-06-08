@@ -60,11 +60,13 @@ directories/dtl_directory={
 "mochi_quiz_done": "res://dialogic/timelines/mochi_quiz_done.dtl"
 }
 layout/style_directory={
-"": "res://dialogic/styles/mochi.tres",
+"": "res://dialogic/styles/koko.tres",
+"bao": "res://dialogic/styles/bao.tres",
+"koko": "res://dialogic/styles/koko.tres",
 "mochi": "res://dialogic/styles/mochi.tres"
 }
-layout/style_list=["res://dialogic/styles/mochi.tres"]
-layout/default_style="res://dialogic/styles/mochi.tres"
+layout/style_list=["res://dialogic/styles/koko.tres", "res://dialogic/styles/mochi.tres", "res://dialogic/styles/bao.tres"]
+layout/default_style="res://dialogic/styles/koko.tres"
 variables={}
 
 [display]

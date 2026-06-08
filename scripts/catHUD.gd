@@ -7,14 +7,11 @@ var _mood_label: Label
 var _last_mood: int = -1
 
 func _ready() -> void:
-	var panel := PanelContainer.new()
-	panel.set_anchors_preset(Control.PRESET_TOP_LEFT)
-	panel.position = Vector2(12, 12)
-	add_child(panel)
-
 	var vbox := VBoxContainer.new()
+	vbox.set_anchors_preset(Control.PRESET_TOP_LEFT)
+	vbox.position = Vector2(12, 12)
 	vbox.add_theme_constant_override("separation", 4)
-	panel.add_child(vbox)
+	add_child(vbox)
 
 	var name_label := Label.new()
 	name_label.text = cat_key.capitalize()
